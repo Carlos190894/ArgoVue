@@ -1,0 +1,57 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Altura de toda la ventana */
+    background: linear-gradient(to bottom right, #ff6200, #ffdfa0, #f9f9f9);
+    margin: 0; /* Eliminar márgenes del body */
+  }
+  
+  .login {
+    max-width: 350px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8%;
+    background: linear-gradient(to bottom right, #f9f9f9, #fff8eb);
+    color: #893005;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  }
+  
+  .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .logo {
+    width: 60%; /* Ajusta el tamaño */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block;
+  }
+  
+  input {
+    border: 2px solid orange; /* Borde de 2px con color naranja */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    padding: 8px; /* Espaciado interno opcional */
+  }
+  
+  button {
+    margin-top: 1%;
+    width: 70%;
+    font-weight: bold;
+    padding: 7px; /* Ajusta el relleno según sea necesario */
+    text-align: center;
+    box-sizing: border-box; /* Incluye el relleno y el borde en la anchura total */
+    background: #ff6200;
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 15px; /* Borde redondeado */
+    font-size: 15px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  }

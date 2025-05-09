@@ -1,18 +1,32 @@
 <template>
-  <div class="login">
-    <h1>Iniciar Sesión</h1>
-    <form @submit.prevent="handleLogin">
-      <div class="form-group">
-        <label for="email">Correo Electrónico</label>
-        <input type="email" id="email" v-model="email" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" v-model="password" required />
-      </div>
-      <button type="submit">Ingresar</button>
-    </form>
-    <p v-if="error" class="error">{{ error }}</p>
+  <div class="login-container">
+    <div class="login">
+      <img src="../Images/logo.png" alt="Logo" class="logo" />
+      <form @submit.prevent="handleLogin">
+        <div class="form-group">
+          <h2>Iniciar Sesión</h2>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" v-model="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label><br>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" v-model="password" required />
+        </div>
+        <div class="form-group">
+          <button type="submit">Ingresar</button>
+        </div>
+        <div class="form-group">
+            <button type="submit" @click="goToRegister">Registrarse</button>
+        </div>
+      </form>
+      <!-- <p v-if="error" class="error">{{ error }}</p> -->
+    </div>
   </div>
 </template>
 
@@ -20,13 +34,13 @@
 //import axios from "axios";
 
 export default {
-  data() {
-    return {
-      email: "",
-      password: "",
-      error: null,
-    };
-  },
+  // data() {
+  //   return {
+  //     email: "",
+  //     password: "",
+  //     error: null,
+  //   };
+  // },
   methods: {
     // async handleLogin() {
     //   try {
@@ -42,19 +56,17 @@ export default {
     //     this.error = "Credenciales inválidas. Por favor, intenta nuevamente.";
     //   }
     // },
+    goToRegister() {
+      this.$router.push('/Login_1');
+    },
   },
 };
 </script>
 
 <style scoped>
-.login {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-.error {
-  color: red;
-}
+/* - Style unicamente para cambios de estilos a esta pagina */
+</style>
+
+<style>
+@import "@/assets/css/login.css"; /* Importa el archivo CSS */
 </style>
