@@ -1,7 +1,7 @@
 <template>
     <div class="login-container">
       <div class="login">
-        <img src="../Images/logo.png" alt="Logo" class="logo" />
+        <img src="../../Images/logo.png" alt="Logo" class="logo" />
         <div class="profile-uploader">
             <h2>Selecciona tu foto de perfil</h2>
             <div class="image-preview" @click="triggerFileInput">
@@ -75,7 +75,7 @@ export default {
     height: 150px;
     border-radius: 50%;
     /*background-color: #808080; /* Color de fondo gris */
-    background-image: url('../Images/icono_color.png'); /* Ruta de la imagen */
+    background-image: url('../../Images/icono_color.png'); /* Ruta de la imagen */
     background-size: cover;
     border: 2px solid #ff6200; /* Borde azul con un grosor de 5px */
     display: flex;
@@ -90,7 +90,7 @@ export default {
     .placeholder {
     width: 100%;
     height: 100%;
-    background-image: url('../Images/icono_color.png'); /* Ruta de la imagen */
+    background-image: url('../../Images/icono_color.png'); /* Ruta de la imagen */
     background-size: cover;
     border-radius: 50%;
     }

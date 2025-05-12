@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <div class="login">
-      <img src="../Images/logo.png" alt="Logo" class="logo" />
+      <img src="../../Images/logo.png" alt="Logo" class="logo" />
       <form @submit.prevent="handleLogin">
         <div class="form-group">
           <h2>Iniciar Sesión</h2>

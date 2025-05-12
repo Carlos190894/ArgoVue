@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../Pages/UserLogin.vue';
-import AboutPage from '../Pages/Login_1.vue';
-import EstadoPage from '../Pages/Login_2.vue';
-import ImagenPage from '../Pages/Login_3.vue';
-import InteresPage from '../Pages/Login_4.vue';
-import TerminadoPage from '../Pages/Login_5.vue';
-import FinalPage from '../Pages/Login_6.vue';
+import HomePage from '../Pages/Login/UserLogin.vue';
+import AboutPage from '../Pages/Login/Login_1.vue';
+import EstadoPage from '../Pages/Login/Login_2.vue';
+import ImagenPage from '../Pages/Login/Login_3.vue';
+import InteresPage from '../Pages/Login/Login_4.vue';
+import TerminadoPage from '../Pages/Login/Login_5.vue';
+import FinalPage from '../Pages/Login/Login_6.vue';
 
 const routes = [
   {
