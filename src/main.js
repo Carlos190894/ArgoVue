@@ -1,9 +1,10 @@
 import { createApp } from 'vue';
-import App from './components/UserLogin.vue';
-import router from './router/index'; // Importa el archivo de configuración de rutas
+import App from './App.vue';
+import router from './router';
+import './assets/css/fonts.css'; // Importa las fuentes
 
 const app = createApp(App);
 
-app.use(router); // Usa Vue Router
+app.use(router);
 app.mount('#app');
 

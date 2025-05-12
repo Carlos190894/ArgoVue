@@ -10,28 +10,28 @@
             <label for="nombre">Nombre de usuario</label>
           </div>
           <div class="form-group">
-            <input type="text" id="nombre" v-model="nombre" required />
+            <input type="text" id="nombre" v-model="nombre" />
           </div>
           <div class="form-group">
             <label for="nombreNegocio">Nombre de negocio</label>
           </div>
           <div class="form-group">
-            <input type="text" id="nombreNegocio" v-model="nombreNegocio" required />
+            <input type="text" id="nombreNegocio" v-model="nombreNegocio" />
           </div>
           <div class="form-group">
             <label for="email">Correo Electrónico</label>
           </div>
           <div class="form-group">
-            <input type="email" id="email" v-model="email" required />
+            <input type="email" id="email" v-model="email" />
           </div>
           <div class="form-group">
             <label for="password">Contraseña</label><br>
           </div>
           <div class="form-group">
-            <input type="password" id="password" v-model="password" required />
+            <input type="password" id="password" v-model="password" />
           </div>
           <div class="form-group">
-            <button type="submit">Siguiente</button>
+            <button type="submit" @click="goToNext">Siguiente</button>
           </div>
         </form>
         <p v-if="error" class="error">{{ error }}</p>
@@ -44,7 +44,13 @@
   
   export default {
     name: 'Login_1',
+    methods: {
+    goToNext() {
+        this.$router.push({ name: 'Login_2' });
+      },
+    },
   };
+  
   </script>
   
   <style scoped>

@@ -1,10 +1,14 @@
 .login-container {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh; /* Altura de toda la ventana */
     background: linear-gradient(to bottom right, #ff6200, #ffdfa0, #f9f9f9);
-    margin: 0; /* Eliminar márgenes del body */
+    /*margin: 0; /* Eliminar márgenes del body */
   }
   
   .login {
@@ -55,3 +59,49 @@
     font-size: 15px; /* Tamaño de fuente */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
   }
+    /* Ocultar el diseño predeterminado del botón radio */
+    .custom-radio {
+    position: absolute;
+    opacity: 0;
+    }
+
+    /* Estilo personalizado para el botón radio */
+    .radio-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    }
+
+    .radio-wrapper label {
+    margin-left: 8px;
+    cursor: pointer;
+    }
+
+    /* Crea un cuadrado en lugar de un círculo */
+    .radio-wrapper input + label::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ff6200; /* Cambia el color del borde aquí */
+    background-color: #fff;
+    border-radius: 0; /* Asegura que sea un cuadrado */
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+
+    .radio-list li input:checked + label::before {
+        border-color: #ff6200; /* Borde más oscuro */
+        background-color: #a1360b;
+    }
+
+    /* Estilo para la etiqueta */
+    .radio-list li label {
+        cursor: pointer; /* Cambiar el cursor al pasar sobre la etiqueta */
+    }
+    
+    .arrow {
+    margin-left: 10px;
+    font-size: 18px;
+    }

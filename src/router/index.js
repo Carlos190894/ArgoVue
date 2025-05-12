@@ -1,16 +1,48 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-// Importa los componentes que usarás en las rutas
-import Login from '@/components/UserLogin.vue';
-import Registro from '@/components/Login_1.vue';
+import HomePage from '../Pages/UserLogin.vue';
+import AboutPage from '../Pages/Login_1.vue';
+import EstadoPage from '../Pages/Login_2.vue';
+import ImagenPage from '../Pages/Login_3.vue';
+import InteresPage from '../Pages/Login_4.vue';
+import TerminadoPage from '../Pages/Login_5.vue';
+import FinalPage from '../Pages/Login_6.vue';
 
 const routes = [
-  { path: '/UserLogin', component: Login },
+  {
+    path: '/',
+    name: 'UserLogin',
+    component: HomePage,
+  },
   {
     path: '/Login_1',
     name: 'Login_1',
-    component: Registro
+    component: AboutPage,
   },
+  {
+    path : '/Login_2',
+    name: 'Login_2',
+    component: EstadoPage,
+  },
+  {
+    path : '/Login_3',
+    name : 'Login_3',
+    component: ImagenPage,
+  },
+  {
+    path : '/Login_4',
+    name : 'Login_4',
+    component: InteresPage,
+  },
+  {
+    path : '/Login_5',
+    name : 'Login_5',
+    component: TerminadoPage,
+  },
+  {
+    path : '/Login_6',
+    name : 'Login_6',
+    component: FinalPage,
+  }
 ];
 
 const router = createRouter({
@@ -19,3 +51,4 @@ const router = createRouter({
 });
 
 export default router;
+

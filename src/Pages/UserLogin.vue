@@ -10,13 +10,13 @@
           <label for="email">Correo Electrónico</label>
         </div>
         <div class="form-group">
-          <input type="email" id="email" v-model="email" required />
+          <input type="email" id="email" v-model="email" />
         </div>
         <div class="form-group">
           <label for="password">Contraseña</label><br>
         </div>
         <div class="form-group">
-          <input type="password" id="password" v-model="password" required />
+          <input type="password" id="password" v-model="password" />
         </div>
         <div class="form-group">
           <button type="submit">Ingresar</button>
@@ -57,7 +57,7 @@ export default {
     //   }
     // },
     goToRegister() {
-      this.$router.push('/Login_1');
+      this.$router.push({ name: 'Login_1' });
     },
   },
 };
