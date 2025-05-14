@@ -26,7 +26,7 @@
     name: 'Login_6',
     methods: {
     goToNext() {
-        this.$router.push({ name: 'home' });
+        this.$router.push({ name: 'Home' });
       },
     },
   };

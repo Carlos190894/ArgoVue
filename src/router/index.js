@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../Pages/Login/UserLogin.vue';
-import AboutPage from '../Pages/Login/Login_1.vue';
-import EstadoPage from '../Pages/Login/Login_2.vue';
-import ImagenPage from '../Pages/Login/Login_3.vue';
-import InteresPage from '../Pages/Login/Login_4.vue';
-import TerminadoPage from '../Pages/Login/Login_5.vue';
-import FinalPage from '../Pages/Login/Login_6.vue';
+import HomePage from '@/Pages/Login/UserLogin.vue';
+import AboutPage from '@/Pages/Login/Login_1.vue';
+import EstadoPage from '@/Pages/Login/Login_2.vue';
+import ImagenPage from '@/Pages/Login/Login_3.vue';
+import InteresPage from '@/Pages/Login/Login_4.vue';
+import TerminadoPage from '@/Pages/Login/Login_5.vue';
+import FinalPage from '@/Pages/Login/Login_6.vue';
+import Home from '@/Pages/Home/Home.vue';
+import Busqueda  from '@/Pages/Busqueda/Busqueda.vue';
 
 const routes = [
   {
@@ -42,6 +44,16 @@ const routes = [
     path : '/Login_6',
     name : 'Login_6',
     component: FinalPage,
+  },
+  {
+    path : '/Home',
+    name : 'Home',
+    component: Home,
+  },
+  {
+    path : '/Busqueda',
+    name : 'Busqueda',
+    component: Busqueda,
   }
 ];
 
