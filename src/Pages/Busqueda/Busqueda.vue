@@ -41,6 +41,14 @@
                 :key="subIndex"
                 class="submenu-item"
               >
+              <!-- Agregamos la lógica para el botón "Selecciona un país" -->
+              <button
+                v-if="subItem === 'Selecciona un país'"
+                @click="goToPais"
+                class="submenu-button"
+              >
+                {{ subItem }}
+              </button>
                 <span>{{ subItem }}</span>
               </div>
             </div>
@@ -104,7 +112,7 @@
 
 <script>
 export default {
-  name: "ArgoPage",
+  name: "ArgoBusqueda",
   data() {
     return {
       isMenuOpen: false,
@@ -121,7 +129,7 @@ export default {
         {
           label: "Producto",
           subMenu: ["Todos", "Selecciona un producto", "Mis Productos"],
-        },
+        },  
       ],
     };
   },
@@ -129,6 +137,9 @@ export default {
     goToHome() {
         this.$router.push({ name: 'Home' });
       },
+    goToPais(){
+      this.$router.push({ name: 'BusquedaPais'});
+    },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
       this.selectedIndex = null; // Cierra cualquier submenú abierto
@@ -161,7 +172,7 @@ body {
 /* Container */
 .app-container {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   height: 100vh;
   max-width: 375px; /* iPhone width */
   margin: 0 auto;
@@ -254,7 +265,7 @@ body {
   line-height: 150px; /* Centra el texto verticalmente */
   border-radius: 10px; /* Opcional: esquinas redondeadas */
 }
-
+ 
 .background-div3{
   margin-top: 2%;
   margin-bottom: 2%;
@@ -352,7 +363,7 @@ body {
   margin-top: 10px;
   padding: 10px;
   background-color: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

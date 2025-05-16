@@ -8,6 +8,7 @@ import TerminadoPage from '@/Pages/Login/Login_5.vue';
 import FinalPage from '@/Pages/Login/Login_6.vue';
 import Home from '@/Pages/Home/Home.vue';
 import Busqueda  from '@/Pages/Busqueda/Busqueda.vue';
+import Pais  from '@/Pages/Busqueda/BusquedaPais.vue';
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path : '/Busqueda',
     name : 'Busqueda',
     component: Busqueda,
+  },
+  {
+    path : '/BusquedaPais',
+    name : 'BusquedaPais',
+    component: Pais,
   }
 ];
 
