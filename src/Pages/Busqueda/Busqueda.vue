@@ -49,6 +49,20 @@
               >
                 {{ subItem }}
               </button>
+              <button
+                v-if="subItem === 'Selecciona un estado'"
+                @click="goToEstado"
+                class="submenu-button"
+              >
+                {{ subItem }}
+              </button>
+              <button
+                v-if="subItem === 'Selecciona un producto'"
+                @click="goToProducto"
+                class="submenu-button"
+              >
+                {{ subItem }}
+              </button>
                 <span>{{ subItem }}</span>
               </div>
             </div>
@@ -139,6 +153,12 @@ export default {
       },
     goToPais(){
       this.$router.push({ name: 'BusquedaPais'});
+    },
+    goToEstado(){
+      this.$router.push({ name : 'BusquedaEstado'});
+    },
+    goToProducto(){
+      this.$router.push({ name : 'BusquedaProducto'});
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;

@@ -9,6 +9,8 @@ import FinalPage from '@/Pages/Login/Login_6.vue';
 import Home from '@/Pages/Home/Home.vue';
 import Busqueda  from '@/Pages/Busqueda/Busqueda.vue';
 import Pais  from '@/Pages/Busqueda/BusquedaPais.vue';
+import Estado  from '@/Pages/Busqueda/BusquedaEstado.vue';
+import Producto  from '@/Pages/Busqueda/BusquedaProducto.vue';
 
 const routes = [
   {
@@ -60,7 +62,17 @@ const routes = [
     path : '/BusquedaPais',
     name : 'BusquedaPais',
     component: Pais,
-  }
+  },
+  {
+    path : '/BusquedaEstado',
+    name : 'BusquedaEstado',
+    component: Estado,
+  },
+  {
+    path : '/BusquedaProducto',
+    name : 'BusquedaProducto',
+    component: Producto,
+  },
 ];
 
 const router = createRouter({

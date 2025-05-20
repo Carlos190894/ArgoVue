@@ -1,16 +1,19 @@
 <template>
   <router-view />
-  <div>
+  <!-- <div>
     <DropdownButton />
-  </div>
+  </div> -->
 </template>
 
 <script>
-import DropdownButton from './Pages/Busqueda/Busqueda.vue';
+// import DropdownButton from './Pages/Busqueda/Busqueda.vue';
+// export default {
+//   name: 'App',
+//   components: {
+//     DropdownButton,
+//   },
+// };
 export default {
-  name: 'App',
-  components: {
-    DropdownButton,
-  },
+  name: 'App'
 };
 </script>
