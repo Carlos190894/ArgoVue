@@ -11,6 +11,7 @@ import Busqueda  from '@/Pages/Busqueda/Busqueda.vue';
 import Pais  from '@/Pages/Busqueda/BusquedaPais.vue';
 import Estado  from '@/Pages/Busqueda/BusquedaEstado.vue';
 import Producto  from '@/Pages/Busqueda/BusquedaProducto.vue';
+import Publicacion from '@/Pages/Busqueda/BusquedaPublicacion.vue';
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
     path : '/BusquedaProducto',
     name : 'BusquedaProducto',
     component: Producto,
+  },
+  {
+    path : '/BusquedaPublicacion.vue',
+    name : 'BusquedaPublicacion.vue',
+    component: Publicacion,
   },
 ];
 
