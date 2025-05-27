@@ -7,10 +7,29 @@
     justify-content: center;
     align-items: center;
     height: 90vh; /* Altura de toda la ventana */
-    background: linear-gradient(to bottom right, #ff6200, #ffdfa0, #f9f9f9);
+    background-image: url('../../Images/fondoPlantio.jpg'); /* URL de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir el área */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    overflow: hidden;
+    /*background: linear-gradient(to bottom right, #ff6200, #ffdfa0, #f9f9f9);
     /*margin: 0; /* Eliminar márgenes del body */
   }
   
+  .login-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); /* Negro con 40% de opacidad: ajusta aquí */
+    z-index: 1;
+    pointer-events: none; /* Permite clics en los elementos hijos */
+}
+
+/* Para que el contenido esté encima de la capa oscura */
+.login-container > * {
+    position: relative;
+    z-index: 2;
+}
+
   .login {
     max-width: 350px;
     width: 100%;

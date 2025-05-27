@@ -75,8 +75,8 @@ const routes = [
     component: Producto,
   },
   {
-    path : '/BusquedaPublicacion.vue',
-    name : 'BusquedaPublicacion.vue',
+    path : '/BusquedaPublicacion',
+    name : 'BusquedaPublicacion',
     component: Publicacion,
   },
 ];

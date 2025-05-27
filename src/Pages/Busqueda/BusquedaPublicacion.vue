@@ -36,13 +36,13 @@
         </div>
       </section>
       <!-- Botones centrales -->
-       <section>
-              <button>Precio x Unidad</button>
-              <button>Cantidad Ofertada</button>
-              <div style="width: 100%;">
-                  <button>Propuesta de compra</button>
-              </div>
-       </section>
+      <section class="section2">
+        <button class="btn-1">Precio x Unidad</button>
+        <button class="btn-1" style="margin-left: 30px;">Cantidad Ofertada</button>
+        <div style="width: 100%;">
+          <button class="btn-2">Propuesta de compra</button>
+        </div>
+      </section>
       <!-- Eventos -->
       <section class="section">
           <label for="">
@@ -52,7 +52,7 @@
       </section>
 
       <!-- Apartado de publicaciones -->
-       <section class="section">
+       <section class="section2">
             <div class="background-div"></div>
             <div class="background-div"></div>
             <div class="background-div"></div>
@@ -187,6 +187,16 @@ body {
     height: 35px;
 }
 
+.btn-1{
+  width: 40%;
+  height: 5%;
+}
+
+.btn-2{
+  width: 40%;
+  height: 6%;
+  margin-top: 15px;
+}
 .btn-tarjeta{
     width: 60px;
     height: 25px;
@@ -201,6 +211,18 @@ body {
   border-radius: 10px;
   text-align: center;
   color: white;
+}
+
+.section2{
+  display: inline;
+  /* flex-direction: column; */
+  align-items: center;
+  margin-bottom: 5%;
+  padding: 4%;
+  /*background-color: #fff1d0; /* Gray background */
+  border-radius: 10px;
+  text-align: center;
+  /* color: white; */
 }
 
 .titulos{
