@@ -3,14 +3,14 @@
   <div class="app-container">
     <!-- Header -->
     <header class="app-header">
-      <div class="logo">ARGO</div>
-      <!-- <div class="header-icons">
-        <i class="icon bell">🔔</i>
-        <i class="icon user">👤</i>
-      </div> -->
+      <div>
+        <button class="regresar"><i class="fa-solid fa-circle-left" style="margin-right: 15px;"></i>Regresar</button>
+      </div>
+      <div class="logo">
+        
+      </div>
       <div class="header-icons">
-        <i class="fas fa-bell icon"></i>
-        <i class="fas fa-user icon"></i>
+        <i class="fa-solid fa-house" style="color: #74C0FC; font-size: 40px; margin-right: 15px;"></i>
       </div>
     </header>
 
@@ -22,6 +22,8 @@
         <div class="titulos">
             <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
             <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
             <div class="background-div"></div>
         </div>
         <div style="display: flex; gap: 10px;">
@@ -52,11 +54,14 @@
       </section>
 
       <!-- Apartado de publicaciones -->
-       <section class="section2">
-            <div class="background-div"></div>
-            <div class="background-div"></div>
-            <div class="background-div"></div>
-       </section>
+       <div style="text-align: center; font-size: 20px;">
+        <label for="">Tambien te podria interesar</label>
+       </div>
+      <section class="section3">
+        <div class="background-publicacion"></div>
+        <div class="background-publicacion"></div>
+        <div class="background-publicacion"></div>
+      </section>
     </main>
 
     <!-- Footer Navigation -->
@@ -157,13 +162,20 @@ body {
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  background-image: url('../../Images/logo.png'); /* URL de la imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir el área */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  color: white; /* Cambia el color del texto si es necesario */
+  text-align: center; /* Centra el texto horizontalmente */
+  line-height: 150px; /* Centra el texto verticalmente */
+  border-radius: 10px; /* Opcional: esquinas redondeadas */
+  margin-right: 50px;
 }
 
 .header-icons .icon {
   font-size: 25px;
-  margin-left: 15px;
   cursor: pointer;
 }
 
@@ -201,6 +213,11 @@ body {
     width: 60px;
     height: 25px;
 }
+
+.regresar{
+  width: 120px;
+  height: 25px;
+}
 .section {
   display: flex;
   flex-direction: column;
@@ -225,11 +242,18 @@ body {
   /* color: white; */
 }
 
+.section3{
+  display: flex;
+  margin-bottom: 5%;
+  padding: 4%;
+  border-radius: 10px;
+  text-align: center;
+}
 .titulos{
     color: #4a1500;
     display: flex; /* Hace que los elementos estén en la misma fila */
     align-items: center; /* Alinea los elementos verticalmente al centro */
-    gap: 70px; /* Espaciado entre los elementos (opcional) */
+    gap: 25px; /* Espaciado entre los elementos (opcional) */
 }
 .background-div{
   width: 35px;
@@ -265,6 +289,19 @@ body {
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   line-height: 150px; /* Centra el texto verticalmente */
   border-radius: 10px; /* Opcional: esquinas redondeadas */
+}
+
+.background-publicacion{
+  width: 120px;
+  height: 100px;
+  margin: 10px;
+  background-image: url('../../Images/lavanda.jpg'); /* URL de la imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir el área */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  color: white; /* Cambia el color del texto si es necesario */
+  text-align: center; /* Centra el texto horizontalmente */
+  border-radius: 20px; /* Opcional: esquinas redondeadas */ 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .descripcion {
