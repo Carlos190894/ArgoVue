@@ -12,6 +12,7 @@ import Pais  from '@/Pages/Busqueda/BusquedaPais.vue';
 import Estado  from '@/Pages/Busqueda/BusquedaEstado.vue';
 import Producto  from '@/Pages/Busqueda/BusquedaProducto.vue';
 import Publicacion from '@/Pages/Busqueda/BusquedaPublicacion.vue';
+import Chat from '@/Pages/Chat/Chat.vue';
 
 const routes = [
   {
@@ -78,6 +79,11 @@ const routes = [
     path : '/BusquedaPublicacion',
     name : 'BusquedaPublicacion',
     component: Publicacion,
+  },
+  {
+    path : '/ChatPrincipal',
+    name : 'ChatPrincipal',
+    component: Chat,
   },
 ];
 

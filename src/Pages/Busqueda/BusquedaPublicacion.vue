@@ -47,10 +47,12 @@
       </section>
       <!-- Eventos -->
       <section class="section">
+        <div class="descripcion">
           <label for="">
             Aqui tenemos una descripcion mas detalla del producto, como lo son el cuidado, el tiempo de la planta, 
             y demas datos que el agricultor se le solicitara agregar
           </label>
+        </div>
       </section>
 
       <!-- Apartado de publicaciones -->
