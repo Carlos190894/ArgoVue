@@ -13,6 +13,7 @@ import Estado  from '@/Pages/Busqueda/BusquedaEstado.vue';
 import Producto  from '@/Pages/Busqueda/BusquedaProducto.vue';
 import Publicacion from '@/Pages/Busqueda/BusquedaPublicacion.vue';
 import Chat from '@/Pages/Chat/Chat.vue';
+import ChatInicial from '@/Pages/Chat/ChatInicial.vue';
 
 const routes = [
   {
@@ -84,6 +85,11 @@ const routes = [
     path : '/ChatPrincipal',
     name : 'ChatPrincipal',
     component: Chat,
+  },
+  {
+    path : '/ChatInicial',
+    name : 'ChatInicial',
+    component: ChatInicial,
   },
 ];
 

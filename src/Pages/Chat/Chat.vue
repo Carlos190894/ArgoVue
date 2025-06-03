@@ -6,11 +6,11 @@
       <div>
         <button class="regresar"><i class="fa-solid fa-circle-left" style="margin-right: 15px;"></i>Regresar</button>
       </div>
-      <div class="logo">
+      <!-- <div class="logo">
         
-      </div>
+      </div>-->
       <div class="header-icons">
-        <i class="fa-solid fa-house" style="color: #74C0FC; font-size: 40px; margin-right: 15px;"></i>
+        <i class="fa-solid fa-bars"></i>
       </div>
     </header>
 
@@ -38,9 +38,15 @@
         </section>
     </main>
     <div class="textConversacion">
-        <i class="fa-solid fa-camera"></i>
-        <input type="text" label="Aa">
-        <i class="fa-solid fa-gauge-high"></i>
+      <div>
+        <i class="fa-solid fa-camera" style="font-size: 35px;"></i>
+      </div>
+      <div>
+        <input type="text" label="Aa" style="width: 260px; height: 30px; margin-left: 15px; margin-right: 15px;">
+      </div>
+      <div>
+        <i class="fa-solid fa-gauge-high" style="font-size: 35px; margin-bottom: 5px;"></i>
+      </div>
     </div>
     <!-- Footer Navigation -->
     <footer class="app-footer">
@@ -175,6 +181,7 @@ body {
 .regresar{
   width: 120px;
   height: 25px;
+  background: #a1360b;
 }
 
 .section {
@@ -223,7 +230,8 @@ body {
 }
 
 .textConversacion{
-    
+    display: flex;
+    align-content: center;
 }
 
 .icon {
@@ -243,5 +251,9 @@ body {
 .app-footer .icon {
   font-size: 25px;
   cursor: pointer;
+}
+
+input{
+  border-color: #a1360b;
 }
 </style>
