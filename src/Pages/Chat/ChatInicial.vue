@@ -1,28 +1,44 @@
 <template>
-  <div class="container">
-    <h1 class="main-title">Chats</h1>
-
-    <section>
-      <h2 class="section-title">Prospectos</h2>
-      <div class="prospectos-box">
-        <span class="heart-icon">❤️</span>
-        <span class="prospectos-count">+50</span>
+  <div class="app-container">
+    <header class="app-header">
+      <div>
+        <button class="regresar"><i class="fa-solid fa-circle-left" style="margin-right: 15px;"></i>Regresar</button>
       </div>
-    </section>
+    </header>
 
-    <section>
-      <h2 class="section-title">Chats</h2>
-      <div class="chat-item">
-        <div class="avatar">
-          <div class="avatar-img"></div>
-          <span class="status-dot"></span>
+    <main class="app-content">
+      <h1 class="main-title">Chats</h1>
+      <section>
+        <h2 class="section-title">Prospectos</h2>
+        <div class="prospectos-box">
+          <span class="heart-icon">❤️</span>
+          <span class="prospectos-count">+50</span>
         </div>
-        <div class="chat-info">
-          <span class="chat-title">Vivero Atlixco</span>
-          <span class="chat-message">Blabla bla</span>
+      </section>
+
+      <section>
+        <h2 class="section-title">Chats</h2>
+        <div class="chat-item">
+          <div class="avatar">
+            <div class="avatar-img"></div>
+            <span class="status-dot"></span>
+          </div>
+          <div class="chat-info">
+            <span class="chat-title">Vivero Atlixco</span>
+            <span class="chat-message">Blabla bla</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <i class="fa-solid fa-house icon" @click="goToHome"></i>
+      <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
+      <i class="icon search" style="font-size: 30px;">🔍</i>
+      <i class="icon add">➕</i>
+      <i class="icon chat">💬</i>
+      <i class="icon settings">⚙️</i>
+    </footer>
   </div>
 </template>
 
@@ -78,7 +94,37 @@ export default {
 </script>
 
 <style scoped>
-.container {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 375px; /* iPhone width */
+  margin: 0 auto;
+  border: 0px solid #ddd; /* For preview purposes */
+  background-color: white;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10% 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* .container {
   width: 100%;
   max-width: 390px;
   margin: 0 auto;
@@ -86,7 +132,7 @@ export default {
   min-height: 100vh;
   padding: 24px 16px;
   box-sizing: border-box;
-}
+} */
 
 .main-title {
   font-size: 2rem;
@@ -98,6 +144,14 @@ export default {
   font-size: 1.3rem;
   margin-top: 12px;
   margin-bottom: 8px;
+}
+
+/* Main Content */
+.app-content {
+  flex: 1;
+  padding: 10px;
+  margin-top: 5%;
+  overflow-y: auto;
 }
 
 .prospectos-box {
@@ -175,5 +229,25 @@ export default {
 .chat-message {
   font-size: 0.85rem;
   color: #444;
+}
+/* Footer */
+.app-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.app-footer .icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.regresar{
+  width: 120px;
+  height: 25px;
+  background: #a1360b;
 }
 </style>
