@@ -14,6 +14,7 @@ import Producto  from '@/Pages/Busqueda/BusquedaProducto.vue';
 import Publicacion from '@/Pages/Busqueda/BusquedaPublicacion.vue';
 import Chat from '@/Pages/Chat/Chat.vue';
 import ChatInicial from '@/Pages/Chat/ChatInicial.vue';
+import ChatPremium from '@/Pages/Chat/ChatPremium.vue';
 
 const routes = [
   {
@@ -90,6 +91,11 @@ const routes = [
     path : '/ChatInicial',
     name : 'ChatInicial',
     component: ChatInicial,
+  },
+  {
+    path : '/ChatPremium',
+    name : 'ChatPremium',
+    component: ChatPremium,
   },
 ];
 

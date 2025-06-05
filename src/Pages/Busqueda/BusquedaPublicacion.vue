@@ -10,7 +10,7 @@
         
       </div>
       <div class="header-icons">
-        <i class="fa-solid fa-house" style="color: #74C0FC; font-size: 40px; margin-right: 15px;"></i>
+        <i class="fa-solid fa-house-chimney" style="color: #983608; font-size: 40px; margin-right: 0px;"></i>
       </div>
     </header>
 
@@ -19,23 +19,20 @@
         
       <!-- Publicidad -->
       <section class="section">
-        <div class="titulos">
-            <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
-            <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-share-nodes"></i>
-            <div class="background-div"></div>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button class="btn-tarjeta">Vende</button>
-            <button class="btn-tarjeta">Delfa</button>
-        </div>
-            <div class="background-div2"></div>
-        <div class="descripcion">
-          <label for="">
-            Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion 
-          </label>
-        </div>
+        <section class="section-fondo">
+          <div class="titulos">
+              <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
+              <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
+              <i class="fa-regular fa-heart"></i>
+              <i class="fa-solid fa-share-nodes"></i>
+              <div class="background-div"></div>
+          </div>
+          <div style="display: flex; gap: 15px; margin-top: 10px; margin-bottom: 10px;">
+              <button class="btn-tarjeta">Vende</button>
+              <button class="btn-tarjeta">Delfa</button>
+          </div>
+              <div class="background-div2"></div>
+        </section>
       </section>
       <!-- Botones centrales -->
       <section class="section2">
@@ -59,10 +56,16 @@
        <div style="text-align: center; font-size: 20px;">
         <label for="">Tambien te podria interesar</label>
        </div>
-      <section class="section3">
-        <div class="background-publicacion"></div>
-        <div class="background-publicacion"></div>
-        <div class="background-publicacion"></div>
+      <section class="section3" style="justify-content: center;">
+        <section class="section-img">
+          <div class="background-publicacion"></div>
+        </section>
+        <section class="section-img">
+          <div class="background-publicacion"></div>
+        </section>
+        <section class="section-img">
+          <div class="background-publicacion"></div>
+        </section>
       </section>
     </main>
 
@@ -173,7 +176,7 @@ body {
   text-align: center; /* Centra el texto horizontalmente */
   line-height: 150px; /* Centra el texto verticalmente */
   border-radius: 10px; /* Opcional: esquinas redondeadas */
-  margin-right: 50px;
+  margin-right: 40px;
 }
 
 .header-icons .icon {
@@ -204,21 +207,29 @@ body {
 .btn-1{
   width: 40%;
   height: 5%;
+  background: white;
+  background-color: #983608;
 }
 
 .btn-2{
   width: 40%;
   height: 6%;
   margin-top: 15px;
+  background: white;
+  background-color: #983608;
 }
 .btn-tarjeta{
     width: 60px;
     height: 25px;
+    background: white;
+    background-color: #983608;
 }
 
 .regresar{
   width: 120px;
   height: 25px;
+  background: white;
+  background-color: #983608;
 }
 .section {
   display: flex;
@@ -229,9 +240,19 @@ body {
   background-color: #fff1d0; /* Gray background */
   border-radius: 10px;
   text-align: center;
-  color: white;
 }
 
+.section-fondo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+  padding: 4%;
+  background-color: white; /* Gray background */
+  background: #983608;
+  border-radius: 10px;
+  text-align: center;
+}
 .section2{
   display: inline;
   /* flex-direction: column; */
@@ -251,12 +272,30 @@ body {
   border-radius: 10px;
   text-align: center;
 }
+
+.section-img {
+  width: 90px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+  padding: 0%;
+  background-color: #fff1d0; /* Gray background */
+  border-radius: 20px;
+  text-align: center;
+  margin: 10px;
+  border-color: #983608;
+}
+
 .titulos{
-    color: #4a1500;
+    color: white;
     display: flex; /* Hace que los elementos estén en la misma fila */
     align-items: center; /* Alinea los elementos verticalmente al centro */
     gap: 25px; /* Espaciado entre los elementos (opcional) */
+    margin-bottom: 0px;
 }
+
 .background-div{
   width: 35px;
   height: 35px;
@@ -294,8 +333,8 @@ body {
 }
 
 .background-publicacion{
-  width: 120px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin: 10px;
   background-image: url('../../Images/lavanda.jpg'); /* URL de la imagen */
   background-size: cover; /* Ajusta la imagen para cubrir el área */
@@ -322,7 +361,7 @@ body {
 
 .main-button {
   width: 30px;
-  background-color: #ff6200;
+  background-color: #4a1500;
   color: white;
   border: none;
   border-radius: 5px;
