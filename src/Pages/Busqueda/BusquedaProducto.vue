@@ -76,11 +76,10 @@ export default {
   /* width: 100%; */
   height: 80vh;
   box-sizing: border-box;
-  background: #fff;
+  background: #fdf9f1;
   margin-top: 20%;
   overflow-y: auto;
   border-radius: 20px;
-  box-shadow: 0 4px 0px 4px rgba(0, 0, 0, 0.2); /* Sombra opcional */
 }
 
 .states-list {
@@ -91,7 +90,7 @@ export default {
   margin-top: 10%;
   margin-bottom: 15px;
   padding-right: 8px;
-  background: #fff;
+  background: #fdf9f1;
   border: 1px solid #eee;
   border-radius: 8px;
 }
@@ -106,7 +105,7 @@ export default {
   justify-content: space-between;
   padding: 8px 0;
   border-bottom: 1px solid #ddd;
-  background: #fff;
+  background: #fdf9f1;
 }
 
 .country-item:last-child {

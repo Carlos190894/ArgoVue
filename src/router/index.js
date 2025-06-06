@@ -15,6 +15,8 @@ import Publicacion from '@/Pages/Busqueda/BusquedaPublicacion.vue';
 import Chat from '@/Pages/Chat/Chat.vue';
 import ChatInicial from '@/Pages/Chat/ChatInicial.vue';
 import ChatPremium from '@/Pages/Chat/ChatPremium.vue';
+import ChatSinSubscripcion from '@/Pages/Chat/ChatSinSubscripcion.vue';
+import PerfilUsuario from '@/Pages/Perfil/PerfilUsuario.vue';
 
 const routes = [
   {
@@ -96,6 +98,16 @@ const routes = [
     path : '/ChatPremium',
     name : 'ChatPremium',
     component: ChatPremium,
+  },
+  {
+    path : '/ChatSinSubscripcion',
+    name : 'ChatSinSubscripcion',
+    component: ChatSinSubscripcion,
+  },
+  {
+    path : '/PerfilUsuario',
+    name : 'PerfilUsuario',
+    component: PerfilUsuario,
   },
 ];
 

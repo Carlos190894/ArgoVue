@@ -1,6 +1,9 @@
 <template>
     <div class="container">
       <div class="login">
+        <div class="btn-regresar">
+          <button type="submit" @click="goToBack">Regresar</button>
+        </div>
         <img src="../../Images/logo_color.png" alt="Logo" class="logo" />
         <form @submit.prevent="handleLogin">
           <div class="form-group">
@@ -30,7 +33,10 @@
     name: 'BusquedaPais',
     methods: {
     goToNext() {
-        this.$router.push({ name: 'Login_3' });
+        this.$router.push({ name: 'Busqueda' });
+    },
+    goToBack() {
+        this.$router.push({ name: 'Busqueda' });
       },
     },
     data() {
@@ -64,8 +70,13 @@
     height: 90vh; /* Altura de toda la ventana */
     /*margin: 0; /* Eliminar márgenes del body */
   }
+
 .form-group{
   margin: 5%;
+}
+
+.login{
+  border-radius: 20px;
 }
 .country-item {
   display: flex;
@@ -148,7 +159,12 @@ input:checked + .slider::before {
     align-items: center;
     margin-top: 15%;
 }
-  </style>
-  
-  <style>
-  </style>
+
+.btn-regresar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+</style>

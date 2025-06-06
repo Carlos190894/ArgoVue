@@ -45,7 +45,7 @@
         <input type="text" label="Aa" style="width: 260px; height: 30px; margin-left: 15px; margin-right: 15px;">
       </div>
       <div>
-        <i class="fa-solid fa-paper-plane" style="font-size: 35px; margin-bottom: 5px;"></i>
+        <i class="fa-solid fa-gauge-high" style="font-size: 35px; margin-bottom: 5px;"></i>
       </div>
     </div>
     <!-- Footer Navigation -->
@@ -62,7 +62,7 @@
 
 <script>
 export default {
-  name: "ChatPremium",
+  name: "ChatSinSubscripcion",
   data() {
     return {
       isMenuOpen: false,

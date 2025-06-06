@@ -62,14 +62,14 @@ export default {
 <style scoped>
 .container {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 16px;
-  max-width: 100vw;
-  max-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  background: #fff;
-  overflow: hidden;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Altura de toda la ventana */
+    /*margin: 0; /* Eliminar márgenes del body */
 }
 
 .login {
@@ -80,11 +80,11 @@ export default {
   /* width: 100%; */
   height: 80vh;
   box-sizing: border-box;
-  background: #fff;
+  background: #fdf9f1;
   margin-top: 20%;
   overflow-y: auto;
   border-radius: 20px;
-  box-shadow: 0 4px 0px 4px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+  /*box-shadow: 0 4px 0px 4px rgba(0, 0, 0, 0.2); /* Sombra opcional */
 }
 
 .states-list {
@@ -95,7 +95,7 @@ export default {
   margin-top: 10%;
   margin-bottom: 15px;
   padding-right: 8px;
-  background: #fff;
+  background: #fdf9f1;
   border: 1px solid #eee;
   border-radius: 8px;
 }
@@ -197,6 +197,5 @@ input:checked + .slider::before {
   justify-content: center;
   align-items: center;
   width: 40%;
-
 }
 </style>
