@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="login-container">
       <div class="login">
         <div class="btn-regresar">
           <button type="submit" @click="goToBack">Regresar</button>
@@ -25,7 +25,9 @@
       </div>
     </div>
 </template>
-  
+  <style>
+    @import "@/assets/css/fonts.css"; /* Importa el archivo CSS */
+  </style>
   <script>
   //import axios from "axios";
   
@@ -33,10 +35,10 @@
     name: 'BusquedaPais',
     methods: {
     goToNext() {
-        this.$router.push({ name: 'Busqueda' });
+        this.$router.push({ name: 'ArgoBusqueda' });
     },
     goToBack() {
-        this.$router.push({ name: 'Busqueda' });
+        this.$router.push({ name: 'ArgoBusqueda' });
       },
     },
     data() {
@@ -59,7 +61,7 @@
   </script>
   
   <style scoped>
-  .container {
+  /* .login-container {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     width: 100%;
@@ -68,8 +70,8 @@
     justify-content: center;
     align-items: center;
     height: 90vh; /* Altura de toda la ventana */
-    /*margin: 0; /* Eliminar márgenes del body */
-  }
+    /*margin: 0; /* Eliminar márgenes del body 
+  }*/
 
 .form-group{
   margin: 5%;
@@ -77,6 +79,7 @@
 
 .login{
   border-radius: 20px;
+  background: rgba(255, 248, 236, 0.8); /* Negro con 40% de opacidad: ajusta aquí */
 }
 .country-item {
   display: flex;

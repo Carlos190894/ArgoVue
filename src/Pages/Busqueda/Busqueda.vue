@@ -1,126 +1,128 @@
 <template>
-  <div class="app-container">
-    <!-- Header -->
-    <header class="app-header">
-      <div class="logo">ARGO</div>
-      <!-- <div class="header-icons">
-        <i class="icon bell">🔔</i>
-        <i class="icon user">👤</i>
-      </div> -->
-      <div class="header-icons">
-        <i class="fas fa-bell icon"></i>
-        <i class="fas fa-user icon"></i>
-      </div>
-    </header>
+  <div class="login-container">
+    <div class="app-container">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="logo">ARGO</div>
+        <!-- <div class="header-icons">
+          <i class="icon bell">🔔</i>
+          <i class="icon user">👤</i>
+        </div> -->
+        <div class="header-icons">
+          <i class="fas fa-bell icon"></i>
+          <i class="fas fa-user icon"></i>
+        </div>
+      </header>
 
-    <!-- Main Content -->
-    <main class="app-content">
-      <div style="display: flex;">
-        <div class="dropdown-container">
-          <!-- Botón principal -->
-          <button class="main-button" @click="toggleMenu">
-            <span class="icon">≡</span>
-          </button>
+      <!-- Main Content -->
+      <main class="app-content">
+        <div style="display: flex;">
+          <div class="dropdown-container">
+            <!-- Botón principal -->
+            <button class="main-button" @click="toggleMenu">
+              <span class="icon">≡</span>
+            </button>
 
-          <!-- Menú desplegable -->
-          <div v-if="isMenuOpen" class="dropdown-menu">
-            <div
-              v-for="(item, index) in menuItems"
-              :key="index"
-              class="menu-item"
-              @click="selectItem(index)"
-            >
-              <span>{{ item.label }}</span>
-              <span class="arrow">›</span>
-            </div>
-
-            <!-- Opciones de submenú generadas afuera -->
-            <div v-if="selectedIndex !== null" class="submenu-container">
+            <!-- Menú desplegable -->
+            <div v-if="isMenuOpen" class="dropdown-menu">
               <div
-                v-for="(subItem, subIndex) in menuItems[selectedIndex].subMenu"
-                :key="subIndex"
-                class="submenu-item"
+                v-for="(item, index) in menuItems"
+                :key="index"
+                class="menu-item"
+                @click="selectItem(index)"
               >
-              <!-- Agregamos la lógica para el botón "Selecciona un país" -->
-              <button
-                v-if="subItem === 'Selecciona un país'"
-                @click="goToPais"
-                class="submenu-button"
-              >
-                {{ subItem }}
-              </button>
-              <button
-                v-if="subItem === 'Selecciona un estado'"
-                @click="goToEstado"
-                class="submenu-button"
-              >
-                {{ subItem }}
-              </button>
-              <button
-                v-if="subItem === 'Selecciona un producto'"
-                @click="goToProducto"
-                class="submenu-button"
-              >
-                {{ subItem }}
-              </button>
-                <span>{{ subItem }}</span>
+                <span>{{ item.label }}</span>
+                <span class="arrow">›</span>
+              </div>
+
+              <!-- Opciones de submenú generadas afuera -->
+              <div v-if="selectedIndex !== null" class="submenu-container">
+                <div
+                  v-for="(subItem, subIndex) in menuItems[selectedIndex].subMenu"
+                  :key="subIndex"
+                  class="submenu-item"
+                >
+                <!-- Agregamos la lógica para el botón "Selecciona un país" -->
+                <button
+                  v-if="subItem === 'Selecciona un país'"
+                  @click="goToPais"
+                  class="submenu-button"
+                >
+                  {{ subItem }}
+                </button>
+                <button
+                  v-if="subItem === 'Selecciona un estado'"
+                  @click="goToEstado"
+                  class="submenu-button"
+                >
+                  {{ subItem }}
+                </button>
+                <button
+                  v-if="subItem === 'Selecciona un producto'"
+                  @click="goToProducto"
+                  class="submenu-button"
+                >
+                  {{ subItem }}
+                </button>
+                  <span>{{ subItem }}</span>
+                </div>
               </div>
             </div>
           </div>
+          <!-- <button class="btn-header" style="width: 10%;"><i class="fa-solid fa-list"></i></button> -->
+          <button class="btn-header">Comprar</button>
+          <button class="btn-header">Vender</button>
         </div>
-        <!-- <button class="btn-header" style="width: 10%;"><i class="fa-solid fa-list"></i></button> -->
-        <button class="btn-header">Comprar</button>
-        <button class="btn-header">Vender</button>
-      </div>
 
-      <!-- Publicidad -->
-      <section class="section">
-        <div class="titulos">
-            <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
-            <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
-            <div class="background-div"></div>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button class="btn-tarjeta">Vende</button>
-            <button class="btn-tarjeta">Delfa</button>
-        </div>
-            <div class="background-div2"></div>
-        <div class="descripcion">
-          <label for="">
-            Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion 
-          </label>
-        </div>
-      </section>
+        <!-- Publicidad -->
+        <section class="section">
+          <div class="titulos">
+              <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
+              <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
+              <div class="background-div"></div>
+          </div>
+          <div style="display: flex; gap: 10px;">
+              <button class="btn-tarjeta">Vende</button>
+              <button class="btn-tarjeta">Delfa</button>
+          </div>
+              <div class="background-div2"></div>
+          <div class="descripcion">
+            <label for="">
+              Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion 
+            </label>
+          </div>
+        </section>
 
-      <!-- Eventos -->
-      <section class="section">
-        <div class="titulos">
-            <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
-            <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
-            <div class="background-div"></div>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button class="btn-tarjeta">Vende</button>
-            <button class="btn-tarjeta">Delfa</button>
-        </div>
-            <div class="background-div3"></div>
-        <div class="descripcion">
-          <label for="">
-            Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion
-          </label>
-        </div>
-      </section>
-    </main>
+        <!-- Eventos -->
+        <section class="section">
+          <div class="titulos">
+              <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
+              <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
+              <div class="background-div"></div>
+          </div>
+          <div style="display: flex; gap: 10px;">
+              <button class="btn-tarjeta">Vende</button>
+              <button class="btn-tarjeta">Delfa</button>
+          </div>
+              <div class="background-div3"></div>
+          <div class="descripcion">
+            <label for="">
+              Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion
+            </label>
+          </div>
+        </section>
+      </main>
 
-    <!-- Footer Navigation -->
-    <footer class="app-footer">
-        <i class="fa-solid fa-house icon" @click="goToHome"></i>
-      <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
-      <i class="icon search" style="font-size: 30px;">🔍</i>
-      <i class="icon add">➕</i>
-      <i class="icon chat">💬</i>
-      <i class="icon settings">⚙️</i>
-    </footer>
+      <!-- Footer Navigation -->
+      <footer class="app-footer">
+          <i class="fa-solid fa-house icon" @click="goToHome"></i>
+        <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
+        <i class="icon search" style="font-size: 30px;">🔍</i>
+        <i class="icon add">➕</i>
+        <i class="icon chat" @click="goChat">💬</i>
+        <i class="icon settings">⚙️</i>
+      </footer>
+    </div>
   </div>
 </template>
 
@@ -148,9 +150,12 @@ export default {
     };
   },
   methods: {
-    goToHome() {
-        this.$router.push({ name: 'Home' });
-      },
+    goToHome() {  
+      this.$router.push({ name: 'ArgoPage' });
+    },
+    goChat(){
+      this.$router.push({name: 'ChatInicial'})
+    },
     goToPais(){
       this.$router.push({ name: 'BusquedaPais'});
     },
@@ -174,7 +179,9 @@ export default {
   },
 };
 </script>
-
+<style>
+  @import "@/assets/css/fonts.css"; /* Importa el archivo CSS */
+</style>
 <style scoped>
 /* Global styles */
 * {
@@ -190,15 +197,6 @@ body {
 
 
 /* Container */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  max-width: 375px; /* iPhone width */
-  margin: 0 auto;
-  border: 0px solid #ddd; /* For preview purposes */
-  background-color: white;
-}
 
 /* Header */
 .app-header {
@@ -402,18 +400,4 @@ body {
   background-color: #eee;
 }
 
-/* Footer */
-.app-footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  border-top: 1px solid #ddd;
-  background-color: #fff;
-}
-
-.app-footer .icon {
-  font-size: 25px;
-  cursor: pointer;
-}
 </style>

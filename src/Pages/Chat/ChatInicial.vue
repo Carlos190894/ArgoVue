@@ -34,9 +34,9 @@
     <footer class="app-footer">
       <i class="fa-solid fa-house icon" @click="goToHome"></i>
       <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
-      <i class="icon search" style="font-size: 30px;">🔍</i>
+      <i class="icon search" @click="goSearch">🔍</i>
       <i class="icon add">➕</i>
-      <i class="icon chat">💬</i>
+      <i class="icon chat" style="font-size: 30px;">💬</i>
       <i class="icon settings">⚙️</i>
     </footer>
   </div>
@@ -67,8 +67,11 @@ export default {
   },
   methods: {
     goToHome() {  
-      this.$router.push({ name: 'Home' });
+      this.$router.push({ name: 'ArgoPage' });
     },
+    goSearch() {
+      this.$router.push({ name: 'ArgoBusqueda'})
+    },  
     goToPais(){
       this.$router.push({ name: 'BusquedaPais'});
     },
@@ -108,11 +111,15 @@ body {
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  max-width: 375px; /* iPhone width */
-  margin: 0 auto;
-  border: 0px solid #ddd; /* For preview purposes */
-  background-color: white;
+  font-size: 16px;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  height: 100vh; /* Altura de toda la ventana */
+  background-image: url('../../Images/FondoApp.jpeg'); /* URL de la imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir el área */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  overflow: hidden;
 }
 
 /* Header */
@@ -124,23 +131,15 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-/* .container {
-  width: 100%;
-  max-width: 390px;
-  margin: 0 auto;
-  background: #fff;
-  min-height: 100vh;
-  padding: 24px 16px;
-  box-sizing: border-box;
-} */
-
 .main-title {
+  padding-left: 5%;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 16px;
 }
 
 .section-title {
+  padding-left: 5%;
   font-size: 1.3rem;
   margin-top: 12px;
   margin-bottom: 8px;
@@ -148,6 +147,7 @@ body {
 
 /* Main Content */
 .app-content {
+  padding-left: 5%;
   flex: 1;
   padding: 10px;
   margin-top: 5%;
@@ -155,6 +155,7 @@ body {
 }
 
 .prospectos-box {
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -182,6 +183,7 @@ body {
 }
 
 .chat-item {
+  margin-left: 5%;
   display: flex;
   align-items: center;
   background: #f2f2f2;
@@ -237,7 +239,7 @@ body {
   align-items: center;
   padding: 10px 0;
   border-top: 1px solid #ddd;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .app-footer .icon {
@@ -246,6 +248,7 @@ body {
 }
 
 .regresar{
+  margin-left: 5%;
   width: 120px;
   height: 25px;
   background: #a1360b;

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="login-container">
     <div class="login">
       <div class="btn-regresar">
         <button type="submit" @click="goToBack">Regresar</button>
@@ -27,16 +27,18 @@
     </div>
   </div>
 </template>
-
+<style>
+  @import "@/assets/css/fonts.css"; /* Importa el archivo CSS */
+</style>
 <script>
 export default {
   name: 'BusquedaProducto',
   methods: {
     goToNext() {
-        this.$router.push({ name: 'Busqueda' });
+        this.$router.push({ name: 'ArgoBusqueda' });
     },
     goToBack(){
-        this.$router.push({ name: 'Busqueda' });
+        this.$router.push({ name: 'ArgoBusqueda' });
     }
   },
   data() {
@@ -76,8 +78,7 @@ export default {
   /* width: 100%; */
   height: 80vh;
   box-sizing: border-box;
-  background: #fdf9f1;
-  margin-top: 20%;
+  background: rgba(255, 248, 236, 0.8); /* Negro con 40% de opacidad: ajusta aquí */
   overflow-y: auto;
   border-radius: 20px;
 }
@@ -90,7 +91,7 @@ export default {
   margin-top: 10%;
   margin-bottom: 15px;
   padding-right: 8px;
-  background: #fdf9f1;
+  background: rgba(255, 248, 236, 0.3); /* Negro con 40% de opacidad: ajusta aquí */
   border: 1px solid #eee;
   border-radius: 8px;
 }
@@ -105,7 +106,7 @@ export default {
   justify-content: space-between;
   padding: 8px 0;
   border-bottom: 1px solid #ddd;
-  background: #fdf9f1;
+  background: rgba(255, 248, 236, 0.1); /* Negro con 40% de opacidad: ajusta aquí */
 }
 
 .country-item:last-child {

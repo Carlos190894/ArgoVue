@@ -55,13 +55,13 @@ const routes = [
     component: FinalPage,
   },
   {
-    path : '/Home',
-    name : 'Home',
+    path : '/ArgoPage',
+    name : 'ArgoPage',
     component: Home,
   },
   {
-    path : '/Busqueda',
-    name : 'Busqueda',
+    path : '/ArgoBusqueda',
+    name : 'ArgoBusqueda',
     component: Busqueda,
   },
   {

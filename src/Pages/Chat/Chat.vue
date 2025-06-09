@@ -1,62 +1,64 @@
 
 <template>
-  <div class="app-container">
-    <!-- Header -->
-    <header class="app-header">
-      <div>
-        <button class="regresar"><i class="fa-solid fa-circle-left" style="margin-right: 15px;"></i>Regresar</button>
-      </div>
-      <!-- <div class="logo">
-        
-      </div>-->
-      <div class="header-icons">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-    </header>
+  <div class="login-container">
+    <div class="app-container">
+      <!-- Header -->
+      <header class="app-header">
+        <div>
+          <button class="regresar"><i class="fa-solid fa-circle-left" style="margin-right: 15px;"></i>Regresar</button>
+        </div>
+        <!-- <div class="logo">
+          
+        </div>-->
+        <div class="header-icons">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </header>
 
-    <!-- Main Content -->
-    <main class="app-content">
-        <section class="section">
-            <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
-            <label id="nombreVivero" style="font-weight: bold; margin-top: 10px;" for="">Vivero Atlixco</label>
-            <label id="nombreVivero" style="font-weight: bold; margin-top: 10px;" for="">Sin Subscripcion</label>
-        </section>
+      <!-- Main Content -->
+      <main class="app-content">
+          <section class="section">
+              <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
+              <label id="nombreVivero" style="font-weight: bold; margin-top: 10px;" for="">Vivero Atlixco</label>
+              <label id="nombreVivero" style="font-weight: bold; margin-top: 10px;" for="">Sin Subscripcion</label>
+          </section>
 
-        <section class="section-chat">
-            <i class="fa-regular fa-circle-user icon" style="font-size: 35px;"></i>
-            <div class="contenidoChat" style="width: 80%; margin-left: 25px;">
-                <label for="" class="chat1">Vivero atlixco</label><br>
-                <label for="" class="chat1">Pregunta para informacion ?</label>
-            </div>
-        </section>
+          <section class="section-chat">
+              <i class="fa-regular fa-circle-user icon" style="font-size: 35px;"></i>
+              <div class="contenidoChat" style="width: 80%; margin-left: 25px;">
+                  <label for="" class="chat1">Vivero atlixco</label><br>
+                  <label for="" class="chat1">Pregunta para informacion ?</label>
+              </div>
+          </section>
 
-        <section class="section-chat">
-            <div class="contenidoChatCliente" style="width: 80%; margin-right: 25px;">
-                <label for="" class="chat1">Section para responder la preguntar y continuar con el chat</label>
-            </div>
-            <i class="fa-regular fa-circle-user icon" style="font-size: 35px;"></i>
-        </section>
-    </main>
-    <div class="textConversacion">
-      <div>
-        <i class="fa-solid fa-camera" style="font-size: 35px;"></i>
+          <section class="section-chat">
+              <div class="contenidoChatCliente" style="width: 80%; margin-right: 25px;">
+                  <label for="" class="chat1">Section para responder la preguntar y continuar con el chat</label>
+              </div>
+              <i class="fa-regular fa-circle-user icon" style="font-size: 35px;"></i>
+          </section>
+      </main>
+      <div class="textConversacion">
+        <div>
+          <i class="fa-solid fa-camera" style="font-size: 35px;"></i>
+        </div>
+        <div>
+          <input type="text" label="Aa" style="width: 260px; height: 30px; margin-left: 15px; margin-right: 15px;">
+        </div>
+        <div>
+          <i class="fa-solid fa-gauge-high" style="font-size: 35px; margin-bottom: 5px;"></i>
+        </div>
       </div>
-      <div>
-        <input type="text" label="Aa" style="width: 260px; height: 30px; margin-left: 15px; margin-right: 15px;">
-      </div>
-      <div>
-        <i class="fa-solid fa-gauge-high" style="font-size: 35px; margin-bottom: 5px;"></i>
-      </div>
+      <!-- Footer Navigation -->
+      <footer class="app-footer">
+          <i class="fa-solid fa-house icon" @click="goToHome"></i>
+        <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
+        <i class="icon search" style="font-size: 30px;">🔍</i>
+        <i class="icon add">➕</i>
+        <i class="icon chat">💬</i>
+        <i class="icon settings">⚙️</i>
+      </footer>
     </div>
-    <!-- Footer Navigation -->
-    <footer class="app-footer">
-        <i class="fa-solid fa-house icon" @click="goToHome"></i>
-      <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
-      <i class="icon search" style="font-size: 30px;">🔍</i>
-      <i class="icon add">➕</i>
-      <i class="icon chat">💬</i>
-      <i class="icon settings">⚙️</i>
-    </footer>
   </div>
 </template>
 
@@ -110,7 +112,9 @@ export default {
   },
 };
 </script>
-
+<style>
+  @import "@/assets/css/fonts.css"; /* Importa el archivo CSS */
+</style>
 <style scoped>
 /* Global styles */
 * {
