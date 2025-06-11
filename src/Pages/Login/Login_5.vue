@@ -6,7 +6,7 @@
           <div class="form-group">
             <h2>Enhorabuena</h2>
           </div>
-          <div class="form-group">
+          <div class="texto">
             <h2>Haz creado tu perfil con exito!</h2>
           </div>
           <div class="form-group">

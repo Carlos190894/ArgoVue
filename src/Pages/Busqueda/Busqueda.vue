@@ -42,29 +42,42 @@
                   :key="subIndex"
                   class="submenu-item"
                 >
-                <!-- Agregamos la lógica para el botón "Selecciona un país" -->
-                <button
-                  v-if="subItem === 'Selecciona un país'"
-                  @click="goToPais"
-                  class="submenu-button"
-                >
-                  {{ subItem }}
-                </button>
-                <button
-                  v-if="subItem === 'Selecciona un estado'"
-                  @click="goToEstado"
-                  class="submenu-button"
-                >
-                  {{ subItem }}
-                </button>
-                <button
-                  v-if="subItem === 'Selecciona un producto'"
-                  @click="goToProducto"
-                  class="submenu-button"
-                >
-                  {{ subItem }}
-                </button>
-                  <span>{{ subItem }}</span>
+                  <button
+                    v-if="subItem === 'Selecciona un país'"
+                    @click="goToPais"
+                    class="submenu-button"
+                  >
+                    {{ subItem }}
+                  </button>
+                  <button
+                    v-else-if="subItem === 'Selecciona un estado'"
+                    @click="goToEstado"
+                    class="submenu-button"
+                  >
+                    {{ subItem }}
+                  </button>
+                  <button
+                    v-else-if="subItem === 'Selecciona un producto'"
+                    @click="goToProducto"
+                    class="submenu-button"
+                  >
+                    {{ subItem }}
+                  </button>
+                  <button
+                    v-else-if="subItem === 'Todos'"
+                    @click="goToProducto"
+                    class="submenu-button"
+                  >
+                    {{ subItem }}
+                  </button>
+                  <button
+                    v-else-if="subItem === 'Mis Productos'"
+                    @click="goToProducto"
+                    class="submenu-button"
+                  >
+                    {{ subItem }}
+                  </button>
+                  <span v-else>{{ subItem }}</span>
                 </div>
               </div>
             </div>
@@ -75,13 +88,13 @@
         </div>
 
         <!-- Publicidad -->
-        <section class="section">
+        <section class="section" @click="goPublicacion">
           <div class="titulos">
               <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
               <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
               <div class="background-div"></div>
           </div>
-          <div style="display: flex; gap: 10px;">
+          <div class="elemento-2">
               <button class="btn-tarjeta">Vende</button>
               <button class="btn-tarjeta">Delfa</button>
           </div>
@@ -94,15 +107,15 @@
         </section>
 
         <!-- Eventos -->
-        <section class="section">
+        <section class="section" @click="goPublicacion">
           <div class="titulos">
               <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
               <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
               <div class="background-div"></div>
           </div>
-          <div style="display: flex; gap: 10px;">
+          <div class="elemento-2">
               <button class="btn-tarjeta">Vende</button>
-              <button class="btn-tarjeta">Delfa</button>
+              <button class="btn-tarjeta">Lavanda</button>
           </div>
               <div class="background-div3"></div>
           <div class="descripcion">
@@ -117,7 +130,7 @@
       <footer class="app-footer">
           <i class="fa-solid fa-house icon" @click="goToHome"></i>
         <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
-        <i class="icon search" style="font-size: 30px;">🔍</i>
+        <i class="icon search" style="font-size: 35px;">🔍</i>
         <i class="icon add">➕</i>
         <i class="icon chat" @click="goChat">💬</i>
         <i class="icon settings">⚙️</i>
@@ -165,6 +178,9 @@ export default {
     goToProducto(){
       this.$router.push({ name : 'BusquedaProducto'});
     },
+    goPublicacion(){
+      this.$router.push({ name : 'BusquedaPublicacion'});
+    },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
       this.selectedIndex = null; // Cierra cualquier submenú abierto
@@ -181,6 +197,7 @@ export default {
 </script>
 <style>
   @import "@/assets/css/fonts.css"; /* Importa el archivo CSS */
+  @import "@/assets/css/header.css"; /* Importa el archivo CSS */
 </style>
 <style scoped>
 /* Global styles */
@@ -195,9 +212,6 @@ body {
   background-color: #f8f9fa;
 }
 
-
-/* Container */
-
 /* Header */
 .app-header {
   display: flex;
@@ -205,17 +219,7 @@ body {
   align-items: center;
   padding: 10% 15px;
   border-bottom: 1px solid #ddd;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.header-icons .icon {
-  font-size: 25px;
-  margin-left: 15px;
-  cursor: pointer;
+  color: white;
 }
 
 /* Main Content */
@@ -226,11 +230,6 @@ body {
   overflow-y: auto;
 }
 
-/* .main-button{
-  width: 30px;
-  margin-right: 10px;
-} */
-
 .btn-header{
     margin-bottom: 5%;
     margin-left: 3%;
@@ -239,16 +238,17 @@ body {
 }
 
 .btn-tarjeta{
-    width: 60px;
+    width: 90px;
     height: 25px;
 }
+
 .section {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 5%;
   padding: 4%;
-  background-color: #fff1d0; /* Gray background */
+  background: rgba(255, 248, 236, 0.8); /* Negro con 40% de opacidad: ajusta aquí */
   border-radius: 10px;
   text-align: center;
   color: white;
@@ -260,6 +260,14 @@ body {
     align-items: center; /* Alinea los elementos verticalmente al centro */
     gap: 70px; /* Espaciado entre los elementos (opcional) */
 }
+
+.elemento-2{
+  display: flex; 
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .background-div{
   width: 35px;
   height: 35px;
@@ -300,9 +308,11 @@ body {
   width: 90%;
   margin-top: 2%;
   padding: 2%;
-  background-color: #f8f9fa;
+  background: rgba(255, 248, 236, 1); /* Negro con 40% de opacidad: ajusta aquí */
   color: #4a1500;
   border-radius: 10px; /* Opcional: esquinas redondeadas */
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .dropdown-container {
@@ -310,9 +320,10 @@ body {
   display: inline-block;
 }
 
+/*Boton de la lista desplegable**/
 .main-button {
-  width: 30px;
-  background-color: #ff6200;
+  width: 40px;
+  background-color: #a1360b;
   color: white;
   border: none;
   border-radius: 5px;
@@ -348,11 +359,11 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  /* background-color: #ff6200; */
   padding: 5px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 200px;
+  width: 250px;
+  height: 200px;
 }
 
 .menu-item {
@@ -360,7 +371,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f9f9f9;
-  border: 3px solid orange; /* Borde de 2px con color naranja */
+  border: 3px solid #4a1500; /* Borde de 2px con color naranja */
   font-weight: bold;
   color: #4a1500;
   padding: 10px;
@@ -387,15 +398,19 @@ body {
 
 .submenu-item {
   margin-top: 2px;
-  padding: 5px;
-  background-color: #fff1d0;
+  padding: 2px;
+  background-color: transparent;
   color: #4a1500;
   margin-bottom: 5px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer; 
 }
 
+.submenu-button {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #4a1500; /* Borde de 2px con color naranja */
+}
 .submenu-item:hover {
   background-color: #eee;
 }

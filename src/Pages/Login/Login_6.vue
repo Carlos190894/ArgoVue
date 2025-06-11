@@ -5,7 +5,7 @@
         <form @submit.prevent="handleLogin">
           <div class="form-group">
           </div>
-          <div class="form-group">
+          <div class="texto">
             <h2>¿Quieres que ARGO te envie notificaciones?</h2>
           </div>
           <div class="form-group">
@@ -26,7 +26,7 @@
     name: 'Login_6',
     methods: {
     goToNext() {
-        this.$router.push({ name: 'Home' });
+        this.$router.push({ name: 'ArgoPage' });
       },
     },
   };

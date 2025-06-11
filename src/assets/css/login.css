@@ -47,6 +47,15 @@
     align-items: center;
     margin-top: 4%;
   }
+
+  .texto{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
   
   .error {
     color: red;

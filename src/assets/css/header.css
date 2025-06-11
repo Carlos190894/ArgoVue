@@ -1,0 +1,19 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10% 15px;
+  border-bottom: 1px solid #ddd;
+  color: white;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.header-icons .icon {
+  font-size: 25px;
+  margin-left: 15px;
+  cursor: pointer;
+}   

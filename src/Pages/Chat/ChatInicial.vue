@@ -18,7 +18,7 @@
 
       <section>
         <h2 class="section-title">Chats</h2>
-        <div class="chat-item">
+        <div class="chat-item" @click="goChat">
           <div class="avatar">
             <div class="avatar-img"></div>
             <span class="status-dot"></span>
@@ -36,7 +36,7 @@
       <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
       <i class="icon search" @click="goSearch">🔍</i>
       <i class="icon add">➕</i>
-      <i class="icon chat" style="font-size: 30px;">💬</i>
+      <i class="icon chat" style="font-size: 35px;">💬</i>
       <i class="icon settings">⚙️</i>
     </footer>
   </div>
@@ -70,28 +70,11 @@ export default {
       this.$router.push({ name: 'ArgoPage' });
     },
     goSearch() {
-      this.$router.push({ name: 'ArgoBusqueda'})
+      this.$router.push({ name: 'ArgoBusqueda'});
     },  
-    goToPais(){
-      this.$router.push({ name: 'BusquedaPais'});
-    },
-    goToEstado(){
-      this.$router.push({ name : 'BusquedaEstado'});
-    },
-    goToProducto(){
-      this.$router.push({ name : 'BusquedaProducto'});
-    },
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-      this.selectedIndex = null; // Cierra cualquier submenú abierto
-    },
-    selectItem(index) {
-      if (this.selectedIndex === index) {
-        this.selectedIndex = null; // Cierra el submenú si ya está abierto
-      } else {
-        this.selectedIndex = index; // Abre el submenú seleccionado
-      }
-    },
+    goChat(){
+      this.$router.push({ name: 'ChatPrincipal'});
+    }
   },
 };
 </script>

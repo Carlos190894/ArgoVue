@@ -75,9 +75,9 @@ export default {
     height: 150px;
     border-radius: 50%;
     /*background-color: #808080; /* Color de fondo gris */
-    background-image: url('../../Images/icono_color.png'); /* Ruta de la imagen */
+    background-image: url('../../Images/icono_negro.png'); /* Ruta de la imagen */
     background-size: cover;
-    border: 2px solid #ff6200; /* Borde azul con un grosor de 5px */
+    border: 2px solid #3d3d3c; /* Borde azul con un grosor de 5px */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,7 +90,7 @@ export default {
     .placeholder {
     width: 100%;
     height: 100%;
-    background-image: url('../../Images/icono_color.png'); /* Ruta de la imagen */
+    background-image: url('../../Images/icono_negro.png'); /* Ruta de la imagen */
     background-size: cover;
     border-radius: 50%;
     }

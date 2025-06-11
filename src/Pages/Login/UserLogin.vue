@@ -19,7 +19,7 @@
           <input type="password" id="password" v-model="password" />
         </div>
         <div class="form-group">
-          <button type="submit">Ingresar</button>
+          <button type="submit" @click="goHome">Ingresar</button>
         </div>
         <div class="form-group">
             <button type="submit" @click="goToRegister">Registrarse</button>
@@ -58,6 +58,9 @@ export default {
     // },
     goToRegister() {
       this.$router.push({ name: 'Login_1' });
+    },
+    goHome() {
+      this.$router.push({ name: 'ArgoPage'})
     },
   },
 };

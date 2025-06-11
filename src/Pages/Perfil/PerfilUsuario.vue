@@ -270,7 +270,7 @@ const selectedPublTab = ref('ventas')
   transition: background 0.12s;
 }
 .side-menu li:hover {
-  background: #e5e5e5;
+  background: #d32b3a;
 }
 .side-menu .icon {
   width: 22px;
