@@ -89,39 +89,43 @@
 
         <!-- Publicidad -->
         <section class="section" @click="goPublicacion">
-          <div class="titulos">
+          <div class="general">
+            <div class="titulos">
               <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
               <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
               <div class="background-div"></div>
-          </div>
-          <div class="elemento-2">
-              <button class="btn-tarjeta">Vende</button>
-              <button class="btn-tarjeta">Delfa</button>
-          </div>
-              <div class="background-div2"></div>
-          <div class="descripcion">
-            <label for="">
-              Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion 
-            </label>
+            </div>
+            <div class="elemento-2">
+                <button class="btn-tarjeta">Vende</button>
+                <button class="btn-tarjeta">Delfa</button>
+            </div>
+                <div class="background-div2"></div>
+            <div class="descripcion">
+              <label for="">
+                Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion 
+              </label>
+            </div>
           </div>
         </section>
 
         <!-- Eventos -->
         <section class="section" @click="goPublicacion">
-          <div class="titulos">
+          <div class="general">
+            <div class="titulos">
               <i class="fa-regular fa-circle-user icon" style="font-size: 30px;"></i>
               <label id="nombreVivero" style="font-weight: bold;" for="">Vivero Atlixco</label>
               <div class="background-div"></div>
-          </div>
-          <div class="elemento-2">
-              <button class="btn-tarjeta">Vende</button>
-              <button class="btn-tarjeta">Lavanda</button>
-          </div>
-              <div class="background-div3"></div>
-          <div class="descripcion">
-            <label for="">
-              Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion
-            </label>
+            </div>
+            <div class="elemento-2">
+                <button class="btn-tarjeta">Vende</button>
+                <button class="btn-tarjeta">Lavanda</button>
+            </div>
+                <div class="background-div3"></div>
+            <div class="descripcion">
+              <label for="">
+                Descripcion del producto que se esta mostrando en la imagen, despues se completara con informacion
+              </label>
+            </div>
           </div>
         </section>
       </main>
@@ -254,11 +258,21 @@ body {
   color: white;
 }
 
+.general {
+  border: 1px solid #4a1500; /* Borde de 2px con color naranja */
+  border-radius: 20px;
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 4%;
+}
+
 .titulos{
     color: #4a1500;
     display: flex; /* Hace que los elementos estén en la misma fila */
     align-items: center; /* Alinea los elementos verticalmente al centro */
-    gap: 70px; /* Espaciado entre los elementos (opcional) */
+    gap: 60px; /* Espaciado entre los elementos (opcional) */
 }
 
 .elemento-2{
@@ -266,6 +280,10 @@ body {
   gap: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 4%;
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  justify-content: center;
+  text-align: center;
 }
 
 .background-div{
@@ -275,21 +293,26 @@ body {
   background-size: cover; /* Ajusta la imagen para cubrir el área */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   color: white; /* Cambia el color del texto si es necesario */
-  text-align: center; /* Centra el texto horizontalmente */
   line-height: 150px; /* Centra el texto verticalmente */
   border-radius: 10px; /* Opcional: esquinas redondeadas */
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  justify-content: center;
+  text-align: center;
+  padding: 4%;
 }
 
 .background-div2{
   margin-top: 2%;
   margin-bottom: 2%;
-    width: 90%;
-    height: 160px;
+  padding: 4%;
+  width: 90%;
+  height: 160px;
   background-image: url('../../Images/lavanda.jpg'); /* URL de la imagen */
   background-size: cover; /* Ajusta la imagen para cubrir el área */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   line-height: 150px; /* Centra el texto verticalmente */
   border-radius: 10px; /* Opcional: esquinas redondeadas */
+  margin-left: 4%;
 }
  
 .background-div3{
@@ -302,17 +325,19 @@ body {
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   line-height: 150px; /* Centra el texto verticalmente */
   border-radius: 10px; /* Opcional: esquinas redondeadas */
+  margin-left: 4%;
 }
 
 .descripcion {
   width: 90%;
   margin-top: 2%;
   padding: 2%;
-  background: rgba(255, 248, 236, 1); /* Negro con 40% de opacidad: ajusta aquí */
+  background: rgba(255, 248, 236, 0.8); /* Negro con 40% de opacidad: ajusta aquí */
   color: #4a1500;
   border-radius: 10px; /* Opcional: esquinas redondeadas */
   font-weight: bold;
   font-size: 13px;
+  margin-left: 4%;
 }
 
 .dropdown-container {
