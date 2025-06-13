@@ -37,7 +37,7 @@
       <i class="icon search" @click="goSearch">🔍</i>
       <i class="icon add">➕</i>
       <i class="icon chat" style="font-size: 35px;">💬</i>
-      <i class="icon settings">⚙️</i>
+      <i class="fa-regular fa-circle-user" @click="goPerfil" style="font-size: 30px; background: white ; color: #461404; border-radius: 25px;"></i>
     </footer>
   </div>
 </template>
@@ -74,7 +74,10 @@ export default {
     },  
     goChat(){
       this.$router.push({ name: 'ChatPrincipal'});
-    }
+    },
+    goPerfil() {
+      this.$router.push({ name: 'PerfilUsuario'});
+    },
   },
 };
 </script>

@@ -10,7 +10,6 @@
         </div> -->
         <div class="header-icons">
           <i class="fas fa-bell icon"></i>
-          <i class="fas fa-user icon" @click="goPerfil"></i>
         </div>
       </header>
 
@@ -47,7 +46,7 @@
         <i class="icon search"  @click="goSearch">🔍</i>
         <i class="icon add">➕</i>
         <i class="icon chat" @click="goChat">💬</i>
-        <i class="icon settings">⚙️</i>
+        <i class="fa-regular fa-circle-user" @click="goPerfil" style="font-size: 30px; background: white ; color: #461404; border-radius: 25px;"></i>
       </footer>
     </div>
   </div>

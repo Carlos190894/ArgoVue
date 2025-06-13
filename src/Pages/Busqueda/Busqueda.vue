@@ -137,7 +137,7 @@
         <i class="icon search" style="font-size: 35px;">🔍</i>
         <i class="icon add">➕</i>
         <i class="icon chat" @click="goChat">💬</i>
-        <i class="icon settings">⚙️</i>
+        <i class="fa-regular fa-circle-user" @click="goPerfil" style="font-size: 30px; background: white ; color: #461404; border-radius: 25px;"></i>
       </footer>
     </div>
   </div>
@@ -171,7 +171,10 @@ export default {
       this.$router.push({ name: 'ArgoPage' });
     },
     goChat(){
-      this.$router.push({name: 'ChatInicial'})
+      this.$router.push({name: 'ChatInicial'});
+    },
+    goPerfil() {
+      this.$router.push({ name: 'PerfilUsuario'});
     },
     goToPais(){
       this.$router.push({ name: 'BusquedaPais'});

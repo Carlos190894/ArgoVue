@@ -1,186 +1,190 @@
 <template>
-  <div class="profile-container">    
-    <!-- Hamburger Menu Icon -->
-    <div class="hamburger" @click="toggleMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <div class="login-container">
+    <div class="profile-container">    
+      <!-- Hamburger Menu Icon -->
+      <div class="hamburger" @click="toggleMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-    <!-- Side Menu Overlay -->
-    <div v-if="menuOpen" class="menu-overlay" @click.self="toggleMenu">
-      <div class="side-menu">
-        <b>Ayuda</b>
-        <ul>
-          <li>
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png" alt="contacto" />
-            <span>Contacto</span>
-            <span class="arrow">➔</span>
-          </li>
-          <li>
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="verificar cuenta" />
-            <span>Verificar cuenta</span>
-            <span class="arrow">➔</span>
-          </li>
-          <li>
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828959.png" alt="términos" />
-            <span>Términos y condiciones</span>
-            <span class="arrow">➔</span>
-          </li>
-          <li>
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="privacidad" />
-            <span>Política de privacidad</span>
-            <span class="arrow">➔</span>
-          </li>
-          <li>
-            <span class="no-icon"></span>
-            <span>Sobre ARGO</span>
-            <span class="arrow">➔</span>
-          </li>
-          <li>
-            <span class="no-icon"></span>
-            <span>Sobre GLSOFT</span>
-            <span class="arrow">➔</span>
-          </li>
-        </ul>
-        <button class="logout-btn">cerrar sesion</button>
+      <!-- Side Menu Overlay -->
+      <div v-if="menuOpen" class="menu-overlay" @click.self="toggleMenu">
+        <div class="side-menu">
+          <b>Ayuda</b>
+          <ul>
+            <li>
+              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png" alt="contacto" />
+              <span>Contacto</span>
+              <span class="arrow">➔</span>
+            </li>
+            <li>
+              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="verificar cuenta" />
+              <span>Verificar cuenta</span>
+              <span class="arrow">➔</span>
+            </li>
+            <li>
+              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828959.png" alt="términos" />
+              <span>Términos y condiciones</span>
+              <span class="arrow">➔</span>
+            </li>
+            <li>
+              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="privacidad" />
+              <span>Política de privacidad</span>
+              <span class="arrow">➔</span>
+            </li>
+            <li>
+              <span class="no-icon"></span>
+              <span>Sobre ARGO</span>
+              <span class="arrow">➔</span>
+            </li>
+            <li>
+              <span class="no-icon"></span>
+              <span>Sobre GLSOFT</span>
+              <span class="arrow">➔</span>
+            </li>
+          </ul>
+          <button class="logout-btn">cerrar sesion</button>
+        </div>
       </div>
-    </div>
 
-    <!-- Profile Picture and Name -->
-    <div class="profile-info">
-      <div class="profile-pic-wrapper">
-        <div class="profile-pic"></div>
-        <img src="https://cdn-icons-png.flaticon.com/512/4315/4315445.png" alt="verified" class="verified-badge" />
+      <!-- Profile Picture and Name -->
+      <div class="profile-info">
+        <div class="profile-pic-wrapper">
+          <div class="profile-pic"></div>
+          <img src="https://cdn-icons-png.flaticon.com/512/4315/4315445.png" alt="verified" class="verified-badge" />
+        </div>
+        <div class="profile-name">Andrea González</div>
+        <div class="profile-desc">Vivero Atlixco</div>
       </div>
-      <div class="profile-name">Andrea González</div>
-      <div class="profile-desc">Vivero Atlixco</div>
-    </div>
-    
-    <!-- Followers & Following -->
-    <div class="followers-row">
-      <div>
-        <div class="followers-count">10</div>
-        <div class="followers-label">Seguidores</div>
+      
+      <!-- Followers & Following -->
+      <div class="followers-row">
+        <div>
+          <div class="followers-count">10</div>
+          <div class="followers-label">Seguidores</div>
+        </div>
+        <div>
+          <div class="followers-count">10</div>
+          <div class="followers-label">Siguiendo</div>
+        </div>
       </div>
-      <div>
-        <div class="followers-count">10</div>
-        <div class="followers-label">Siguiendo</div>
-      </div>
-    </div>
-    
-    <!-- Menu Tabs -->
-     <!-- Menu Tabs -->
-    <div class="menu-tabs">
-      <button 
-        class="tab" 
-        :class="{ active: selectedTab === 'publicaciones' }"
-        @click="selectedTab = 'publicaciones'"
-      >publicaciones</button>
-      <span 
-        :class="{ 'selected-span': selectedTab === 'perfil' }"
-        @click="selectedTab = 'perfil'"
-      >Perfil</span>
-      <span
-        :class="{ 'selected-span': selectedTab === 'evaluaciones' }"
-        @click="selectedTab = 'evaluaciones'"
-      >Evaluaciones</span>
-      <span
-        :class="{ 'selected-span': selectedTab === 'intereses' }"
-        @click="selectedTab = 'intereses'"
-      >Intereses</span>
-    </div>
 
-    <!-- Tab Content -->
-    <div class="tab-content">
-      <div v-if="selectedTab === 'publicaciones'">        
-        <div class="pubs-section-tabs">
-          <button
-            class="pubs-section-tab"
-            :class="{ active: selectedPublTab === 'ventas' }"
-            @click="selectedPublTab = 'ventas'"
-          >Ventas</button>
-          <span
-            class="pubs-section-label"
-            :class="{ active: selectedPublTab === 'compras' }"
-            @click="selectedPublTab = 'compras'"
-          >Compras</span>
+      <!-- Menu Tabs -->
+      <div class="menu-tabs">
+        <span 
+          class="tab" 
+          :class="{ active: selectedTab === 'publicaciones' }"
+          @click="selectedTab = 'publicaciones'"
+        >publicaciones</span>
+        <span 
+          :class="{ 'selected-span': selectedTab === 'perfil' }"
+          @click="selectedTab = 'perfil'"
+        >Perfil</span>
+        <span
+          :class="{ 'selected-span': selectedTab === 'evaluaciones' }"
+          @click="selectedTab = 'evaluaciones'"
+        >Evaluaciones</span>
+        <span
+          :class="{ 'selected-span': selectedTab === 'intereses' }"
+          @click="selectedTab = 'intereses'"
+        >Intereses</span>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <div v-if="selectedTab === 'publicaciones'">        
+          <div class="pubs-section-tabs">
+            <button
+              class="pubs-section-tab"
+              :class="{ active: selectedPublTab === 'ventas' }"
+              @click="selectedPublTab = 'ventas'"
+            >Ventas</button>
+            <span
+              class="pubs-section-label"
+              :class="{ active: selectedPublTab === 'compras' }"
+              @click="selectedPublTab = 'compras'"
+            >Compras</span>
+          </div>
+          <div class="products-grid">
+            <div
+              v-for="(card, i) in 3"
+              :key="i"
+              class="product-card"
+              :class="{ selected: selectedPublTab === 'compras' && i === 1 }"
+            ></div>
+          </div>
+          <button class="historial">Historial</button>
         </div>
-        <div class="products-grid">
-          <div
-            v-for="(card, i) in 3"
-            :key="i"
-            class="product-card"
-            :class="{ selected: selectedPublTab === 'compras' && i === 1 }"
-          ></div>
+        <div v-else-if="selectedTab === 'perfil'" class="div-perfil">
+          <button class="btn-perfil">Editar Perfil</button>
+          <div class="perfilTab">
+              <label class="lb-perfil">Contacto</label><span class="inp-perfil">735-353-87-90</span>
+              <label class="lb-perfil">Email</label><span class="inp-perfil">andy@gmail.com</span>
+              <label class="lb-perfil">Giro</label><span class="inp-perfil">Productor</span>
+              <label class="lb-perfil">Pais</label><span class="inp-perfil">Mexico</span>
+              <label class="lb-perfil">Estado</label><span class="inp-perfil">Morelos</span>
+              <label class="lb-perfil">Suscripción</label><button class="inp-perfil">Adquirir suscripción</button>
+              </div>
+        </div>
+        <div v-else-if="selectedTab === 'evaluaciones'">
+          <div class="evaluaciones-title">
+              ¿Qué se comenta sobre Vivero Atlixco?
+          </div>
+          <div class="evaluaciones">
+              <div class="evaluacion-card">
+                  <div class="eval-comentario">
+                      “Excelenge comunicación, todos sus productos son de calidad de exportación”
+                  </div>
+                  <div class="eval-score">
+                      CALIFICACION: <span>10</span>
+                  </div>
+                  <div class="eval-footer">
+                      <span class="eval-user">
+                          Vivero Palma
+                          <img class="flag" src="https://flagcdn.com/mx.svg" alt="MX" />
+                      </span>
+                      <span class="eval-time">Hace 2 semanas</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div v-else-if="selectedTab === 'intereses'" class="div-perfil">
+          <div class="intereses">
+          <div class="interes-titulo">Compra</div>
+          <div class="intereses-grid">
+              <div class="interes-item">
+              <img src="../../Images/lavanda.jpg" alt="Bougainvillea" />
+              </div>
+              <div class="interes-item">
+              <img src="../../Images/tulipan.jpg" alt="Sunflower" />
+              </div>
+              <div class="interes-item">
+              <img src="../../Images/promo.jpg" alt="Orange Flower" />
+              </div>
+          </div>
+          <div class="interes-titulo">Venta</div>
+          <div class="intereses-grid">
+              <div class="interes-item empty"></div>
+              <div class="interes-item empty"></div>
+              <div class="interes-item empty"></div>
+          </div>
+          </div>
         </div>
       </div>
-      <div v-else-if="selectedTab === 'perfil'">
-        <button class="btn-perfil">Editar Perfil</button>
-        <div class="perfilTab">
-            <label class="lb-perfil">Contacto</label><span class="inp-perfil">735-353-87-90</span>
-            <label class="lb-perfil">Email</label><span class="inp-perfil">andy@gmail.com</span>
-            <label class="lb-perfil">Giro</label><span class="inp-perfil">Productor</span>
-            <label class="lb-perfil">Pais</label><span class="inp-perfil">Mexico</span>
-            <label class="lb-perfil">Estado</label><span class="inp-perfil">Morelos</span>
-            <label class="lb-perfil">Suscripción</label><button class="inp-perfil">Adquirir suscripción</button>
-            </div>
-      </div>
-      <div v-else-if="selectedTab === 'evaluaciones'">
-        <div class="evaluaciones-title">
-            ¿Qué se comenta sobre Vivero Atlixco?
-        </div>
-        <div class="evaluaciones">
-            <div class="evaluacion-card">
-                <div class="eval-comentario">
-                    “Excelenge comunicación, todos sus productos son de calidad de exportación”
-                </div>
-                <div class="eval-score">
-                    CALIFICACION: <span>10</span>
-                </div>
-                <div class="eval-footer">
-                    <span class="eval-user">
-                        Vivero Palma
-                        <img class="flag" src="https://flagcdn.com/mx.svg" alt="MX" />
-                    </span>
-                    <span class="eval-time">Hace 2 semanas</span>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div v-else-if="selectedTab === 'intereses'">
-        <div class="intereses">
-        <div class="interes-titulo">Compra</div>
-        <div class="intereses-grid">
-            <div class="interes-item">
-            <img src="../../Images/lavanda.jpg" alt="Bougainvillea" />
-            </div>
-            <div class="interes-item">
-            <img src="../../Images/tulipan.jpg" alt="Sunflower" />
-            </div>
-            <div class="interes-item">
-            <img src="../../Images/promo.jpg" alt="Orange Flower" />
-            </div>
-        </div>
-        <div class="interes-titulo">Venta</div>
-        <div class="intereses-grid">
-            <div class="interes-item empty"></div>
-            <div class="interes-item empty"></div>
-            <div class="interes-item empty"></div>
-        </div>
-        </div>
-      </div>
+      <footer class="app-footer">
+        <i class="fa-solid fa-house" @click="goHome" style="font-size: 30px;"></i>
+        <i class="icon search"  @click="goSearch">🔍</i>
+        <i class="icon add">➕</i>
+        <i class="icon chat" @click="goChat">💬</i>
+        <i class="fa-regular fa-circle-user" style="font-size: 45px; background: white ; color: #461404; border-radius: 25px;"></i>
+      </footer>   
     </div>
-    <footer class="app-footer">
-      <i class="fa-solid fa-house" style="font-size: 30px;"></i>
-      <!-- <i class="icon home" style="font-size: 30px;">🏠</i> -->
-      <i class="icon search"  @click="goToNext">🔍</i>
-      <i class="icon add">➕</i>
-      <i class="icon chat">💬</i>
-      <i class="icon settings">⚙️</i>
-    </footer>   
   </div>
 </template>
+<style>
+@import "@/assets/css/fonts.css"; /* Importa el archivo CSS */
+</style>
 
 <script setup>
 import { ref } from 'vue'
@@ -190,29 +194,41 @@ function toggleMenu() { menuOpen.value = !menuOpen.value }
 const selectedTab = ref('publicaciones')
 const selectedPublTab = ref('ventas')
 </script>
+<script>
+export default {
+  methods: {
+    goSearch() {
+        this.$router.push({ name: 'ArgoBusqueda' });
+      },
+    goChat() {
+      this.$router.push({ name: 'ChatInicial'});
+    },
+    goPerfil() {
+      this.$router.push({ name: 'PerfilUsuario'});
+    },
+    goHome() {
+      this.$router.push({ name: 'ArgoPage'});
+    },
+  },
+};
+</script>
 
 <style scoped>
 /* ...estilos anteriores... */
 .profile-container {
   max-width: 375px;
-  margin: 0 auto;
-  background: #fff;
-  height: 100vh;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  background: rgba(255, 248, 236, 0.8); /* Negro con 40% de opacidad: ajusta aquí */
+  height: 85vh;
+  font-family: 'Nunito Sans', sans-serif;
   position: relative;
   padding: 0 0 20px 0;
 }
-.inicio-btn {
-  padding: 7px 27px;
-  background: #888;
-  border-radius: 15px;
-  color: #fff;
-  border: none;
-  font-size: 16px;
-}
+
 .hamburger {
   position: fixed;
-  left: 24px;
+  left: 45px;
   top: 77px;
   display: flex;
   flex-direction: column;
@@ -300,18 +316,21 @@ const selectedPublTab = ref('ventas')
 .logout-btn:hover {
   background: #a61a24;
 }
-/* ...resto de estilos previos (profile-info, followers-row, etc)... */
+
+/* */
 .profile-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 80px;
 }
+
 .profile-pic-wrapper {
   position: relative;
   width: 200px;
   height: 200px;
 }
+
 .profile-pic {
   width: 200px;
   height: 200px;
@@ -323,6 +342,7 @@ const selectedPublTab = ref('ventas')
   background-position: center;   /* Para centrar la imagen */
   background-repeat: no-repeat;  /* Para que la imagen no se repita */
 }
+
 .verified-badge {
   position: absolute;
   bottom: 10px;
@@ -333,70 +353,89 @@ const selectedPublTab = ref('ventas')
   border-radius: 50%;
   border: 2px solid #fff;
 }
+
 .profile-name {
   margin-top: 25px;
   font-size: 20px;
   font-weight: 500;
 }
+
 .profile-desc {
   font-size: 15px;
   color: #444;
   margin-top: 20px;
   margin-bottom: 12px;
 }
+
 .followers-row {
   display: flex;
   justify-content: center;
   gap: 60px;
   margin: 10px 0 0 0;
 }
+
 .followers-count {
   font-size: 20px;
   font-weight: 500;
   text-align: center;
 }
+
 .followers-label {
   text-align: center;
   font-size: 15px;
 }
+
 .menu-tabs {
   display: flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 70%;
   gap: 9px;
   margin-top: 40px;
   margin-bottom: 15px;
+  margin-left: 45px;
 }
-.menu-tabs .tab {
-  background: #888;
-  color: #fff;
-  border-radius: 12px;
-  padding: 3px 14px;
-  border: none;
-  font-weight: 500;
-}
+
 .menu-tabs .tab.active {
-  background: #888;
-}
-.menu-tabs span {
-  color: #444;
+  background: transparent;
+  color: white;
+  background: #461404;
+  border-radius: 20px;
   font-size: 14px;
+}
+
+.menu-tabs span {
+  color: #461404;
+  font-size: 12px;
   padding: 3px 10px;
 }
 
 .menu-tabs .selected-span {
-  text-decoration: underline;
-  color: #333;
+  color: white;
+  background: #461404;
+  border-radius: 20px;
   cursor: pointer;
+  font-size: 14px;
 }
+
 /* Opcional: estilo para el contenido de cada tab */
 .tab-content {
   min-height: 80px;
   padding: 12px 20px;
-  background: #f9f9f9;
+  background: rgba(255, 248, 236, 0.4); /* Negro con 40% de opacidad: ajusta aquí */
   margin: 0 18px 14px 18px;
   border-radius: 10px;
   font-size: 15px;
   color: #222;
+  overflow-y: auto;      /* Scroll solo interno */
+}
+
+.historial {
+  margin-top: 20px;
+  width: 90%;
+  margin-left: 20px;
+  background: #461404;
 }
 
 .section-tabs {
@@ -408,7 +447,7 @@ const selectedPublTab = ref('ventas')
   align-items: center;
 }
 .section-tab {
-  background: #888;
+  background: #461404;
   color: #fff;
   border-radius: 14px;
   padding: 6px 18px;
@@ -417,7 +456,7 @@ const selectedPublTab = ref('ventas')
   font-size: 17px;
 }
 .section-tab.active {
-  background: #888;
+  background: #461404;
 }
 .section-tabs span {
   font-size: 17px;
@@ -440,6 +479,13 @@ const selectedPublTab = ref('ventas')
   background: #fff;
 }
 
+.div-perfil {
+  width: 100%;
+  height: 250px;         /* Fija la altura del div de listado */
+  max-height: 250px;
+  overflow-y: auto;      /* Scroll solo interno */
+}
+
 .perfilTab {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -449,6 +495,8 @@ const selectedPublTab = ref('ventas')
   background: #f6f6f3;
   border-radius: 14px;
   margin-top: 10px;
+  overflow-y: auto;      /* Scroll solo interno */
+
 }
 .lb-perfil {
   align-self: center;
@@ -470,9 +518,8 @@ const selectedPublTab = ref('ventas')
   background: #e5e4e1;
   border-radius: 16px;
   border: none;
-  padding: 5px 15px;
-  min-width: 120px;
-  font-weight: 400;
+  min-width: 150px;
+  font-weight: 500;
   outline: none;
 }
 .perfilTab .inp-perfil[type="text"] {
@@ -483,7 +530,7 @@ const selectedPublTab = ref('ventas')
 .btn-perfil {
   display: block;
   margin: 0 auto 18px auto;
-  background: #e18f13;
+  background: #461404;
   color: #fff;
   border: none;
   border-radius: 18px;
@@ -497,7 +544,7 @@ const selectedPublTab = ref('ventas')
 .perfilTab .inp-perfil[type="button"], 
 .perfilTab .inp-perfil[type="submit"], 
 .perfilTab button.inp-perfil {
-  background: #e18f13;
+  background: #461404;
   color: #fff;
   font-weight: bold;
   border: none;
@@ -527,7 +574,7 @@ const selectedPublTab = ref('ventas')
   padding: 7px 24px;
 }
 .pubs-section-tab.active, .pubs-section-label.active {
-  background: #888;
+  background: #461404;
   color: #fff;
 }
 .pubs-section-tab {
@@ -669,7 +716,7 @@ const selectedPublTab = ref('ventas')
   bottom: 0;
   width: 100%;      /* Opcional, para que ocupe todo el ancho */
   /* Otros estilos opcionales */
-  background: #fff;
+  background: transparent;
   border-top: 1px solid #ccc;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
   padding: 16px;
