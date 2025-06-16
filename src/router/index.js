@@ -17,6 +17,9 @@ import ChatInicial from '@/Pages/Chat/ChatInicial.vue';
 import ChatPremium from '@/Pages/Chat/ChatPremium.vue';
 import ChatSinSubscripcion from '@/Pages/Chat/ChatSinSubscripcion.vue';
 import PerfilUsuario from '@/Pages/Perfil/PerfilUsuario.vue';
+import PerfilTerceraPersona from '@/Pages/Perfil/PerfilTerceraPersona.vue';
+import SubscripcionPremium from '@/Pages/Subscripcion/SubscripcionPremium.vue';
+import PruebaArgo from '@/Pages/Subscripcion/PruebaArgo.vue';
 
 const routes = [
   {
@@ -108,6 +111,21 @@ const routes = [
     path : '/PerfilUsuario',
     name : 'PerfilUsuario',
     component: PerfilUsuario,
+  },
+  {
+    path : '/PerfilTerceraPersona',
+    name : 'PerfilTerceraPersona',
+    component: PerfilTerceraPersona,
+  },
+  {
+    path : '/SubscripcionPremium',
+    name : 'SubscripcionPremium',
+    component: SubscripcionPremium,
+  },
+  {
+    path : '/PruebaArgo',
+    name : 'PruebaArgo',
+    component: PruebaArgo,
   },
 ];
 

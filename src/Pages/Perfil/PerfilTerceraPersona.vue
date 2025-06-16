@@ -1,49 +1,15 @@
 <template>
   <div class="login-container">
-    <div class="profile-container">    
-      <!-- Hamburger Menu Icon -->
-      <div class="hamburger" @click="toggleMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>    
+    <div class="profile-container">
+      <i class="fa-solid fa-flag hamburger" @click="toggleMenu"></i>
+
       <!-- Side Menu Overlay -->
       <div v-if="menuOpen" class="menu-overlay" @click.self="toggleMenu">
         <div class="side-menu">
-          <b>Ayuda</b>
-          <ul>
-            <li>
-              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png" alt="contacto" />
-              <span>Contacto</span>
-              <span class="arrow">➔</span>
-            </li>
-            <li>
-              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="verificar cuenta" />
-              <span>Verificar cuenta</span>
-              <span class="arrow">➔</span>
-            </li>
-            <li>
-              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828959.png" alt="términos" />
-              <span>Términos y condiciones</span>
-              <span class="arrow">➔</span>
-            </li>
-            <li>
-              <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="privacidad" />
-              <span>Política de privacidad</span>
-              <span class="arrow">➔</span>
-            </li>
-            <li>
-              <span class="no-icon"></span>
-              <span>Sobre ARGO</span>
-              <span class="arrow">➔</span>
-            </li>
-            <li>
-              <span class="no-icon"></span>
-              <span>Sobre GLSOFT</span>
-              <span class="arrow">➔</span>
-            </li>
-          </ul>
-          <button class="logout-btn">cerrar sesion</button>
+            <b>Reportar Usuario</b>
+            <label for="">Por favor especifica tu incoveniente con el Usuario</label>
+            <textarea name="" id=""></textarea>
+            <button class="logout-btn">Enviar Reporte</button>
         </div>
       </div>
 
@@ -109,7 +75,6 @@
             <div
               v-for="(card, i) in 3"
               :key="i"
-              @click="toggleMenu"
               class="product-card"
               :class="{ selected: selectedPublTab === 'compras' && i === 1 }"
             ></div>
@@ -154,13 +119,13 @@
           <div class="interes-titulo">Compra</div>
           <div class="intereses-grid">
               <div class="interes-item">
-                <img src="../../Images/lavanda.jpg" alt="Bougainvillea" />
+              <img src="../../Images/lavanda.jpg" alt="Bougainvillea" />
               </div>
               <div class="interes-item">
-                <img src="../../Images/tulipan.jpg" alt="Sunflower" />
+              <img src="../../Images/tulipan.jpg" alt="Sunflower" />
               </div>
               <div class="interes-item">
-                <img src="../../Images/promo.jpg" alt="Orange Flower" />
+              <img src="../../Images/promo.jpg" alt="Orange Flower" />
               </div>
           </div>
           <div class="interes-titulo">Venta</div>
@@ -170,43 +135,6 @@
               <div class="interes-item empty"></div>
           </div>
           </div>
-        </div>
-      </div>
-      <!-- Apartado de opciones  -->
-
-      <div class="menu" @click.self="toggleMenu">
-        <div class="menu-item" @click="ver">
-          <span class="icon">
-            <!-- Ojo (Ver) -->
-            <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-              <ellipse cx="14" cy="14" rx="10" ry="6" stroke="#222" stroke-width="2"/>
-              <circle cx="14" cy="14" r="2.5" fill="none" stroke="#222" stroke-width="2"/>
-            </svg>
-          </span>
-          <span>Ver</span>
-        </div>
-        <div class="menu-item" @click="editar">
-          <span class="icon">
-            <!-- Lápiz (Editar) -->
-            <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-              <rect x="7" y="20" width="14" height="2" fill="#222"/>
-              <path d="M18 8l2 2-8 8-2 0 0-2 8-8z" fill="none" stroke="#222" stroke-width="2"/>
-              <path d="M17 9l2 2" stroke="#222" stroke-width="2"/>
-            </svg>
-          </span>
-          <span>Editar</span>
-        </div>
-        <div class="menu-item" @click="eliminar">
-          <span class="icon">
-            <!-- Basura (Eliminar) -->
-            <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-              <rect x="8" y="12" width="12" height="9" rx="2" fill="none" stroke="#222" stroke-width="2"/>
-              <rect x="11" y="8" width="6" height="2" fill="#222"/>
-              <line x1="12" y1="15" x2="12" y2="19" stroke="#222" stroke-width="2"/>
-              <line x1="16" y1="15" x2="16" y2="19" stroke="#222" stroke-width="2"/>
-            </svg>
-          </span>
-          <span>Eliminar</span>
         </div>
       </div>
       <footer class="app-footer">
@@ -264,22 +192,18 @@ export default {
 }
 
 .hamburger {
-  position: fixed;
-  left: 45px;
-  top: 77px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 21;
+    font-size: 2rem;
+    position: fixed;
+    left: 50px;
+    top: 77px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 21;
+    color: #461404;
 }
-.hamburger span {
-  display: block;
-  width: 30px;
-  height: 4px;
-  background: #111;
-  border-radius: 2px;
-}
+
 .menu-overlay {
   position: fixed;
   top: 40px; left: 0; right: 0; bottom: 0;
@@ -290,54 +214,36 @@ export default {
   justify-content: flex-start;
 }
 .side-menu {
-  margin: 60px 0 0 18px;
+  margin: 95px 0 0 60px;
   background: #ededeb;
   border-radius: 18px;
   padding: 16px 0 16px 0;
   width: 85vw;
-  max-width: 260px;
-  min-width: 230px;
+  max-width: 310px;
+  min-width: 300px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
 }
 .side-menu b {
   font-size: 18px;
   margin-left: 18px;
   margin-bottom: 6px;
 }
-.side-menu ul {
-  list-style: none;
-  padding: 0 0 0 0;
-  margin: 3px 0 0 0;
+.side-menu label {
+  font-size: 14px;
+  margin-left: 18px;
+  margin-bottom: 6px;
 }
-.side-menu li {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 16px;
-  padding: 6px 18px 6px 18px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.12s;
+.side-menu textarea {
+    width: 80%;
+    height: 100px;
 }
-.side-menu li:hover {
-  background: #d32b3a;
-}
-.side-menu .icon {
-  width: 22px;
-  height: 22px;
-  margin-right: 3px;
-}
-.side-menu .arrow {
-  margin-left: auto;
-  font-size: 19px;
-}
-.side-menu .no-icon {
-  width: 22px;
-  height: 22px;
-}
+
 .logout-btn {
   margin: 17px 20px 0 20px;
   padding: 9px 0;
