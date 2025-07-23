@@ -73,6 +73,12 @@
     padding: 8px; /* Espaciado interno opcional */
   }
   
+  textarea{
+    border: 2px solid #a1360b; /* Borde de 2px con color naranja */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    padding: 8px; /* Espaciado interno opcional */
+  }
+  
   button {
     margin-top: 1%;
     width: 70%;

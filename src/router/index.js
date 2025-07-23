@@ -20,6 +20,7 @@ import PerfilUsuario from '@/Pages/Perfil/PerfilUsuario.vue';
 import PerfilTerceraPersona from '@/Pages/Perfil/PerfilTerceraPersona.vue';
 import SubscripcionPremium from '@/Pages/Subscripcion/SubscripcionPremium.vue';
 import PruebaArgo from '@/Pages/Subscripcion/PruebaArgo.vue';
+import PublicacionGeneral from '@/Pages/PublicacionGeneral/PublicacionGeneral.vue';
 
 const routes = [
   {
@@ -126,6 +127,11 @@ const routes = [
     path : '/PruebaArgo',
     name : 'PruebaArgo',
     component: PruebaArgo,
+  },
+  {
+    path : '/PublicacionGeneral',
+    name : 'PublicacionGeneral',
+    component : PublicacionGeneral,
   },
 ];
 
