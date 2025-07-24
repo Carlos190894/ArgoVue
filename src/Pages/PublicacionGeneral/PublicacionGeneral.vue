@@ -8,8 +8,13 @@
         <img :src="logoSrc" alt="Logo" class="logo" />
         <div style="text-align: center;">
           <label class="section-label">
-            ¿Qué vas a publicar? <span class="arrow">&#9654;</span>
+            ¿Qué vas a publicar?
           </label>
+           <br><br>
+          <input type="radio" id="compra" name="tipo_publicacion" value="compra">
+          <label for="compra" class="section-label" style="margin-right: 15px;">Compra</label>
+          <input type="radio" id="venta" name="tipo_publicacion" value="venta">
+          <label for="venta" class="section-label">Venta</label>
         </div>
         <div class="texto">
           <label class="section-label">
@@ -42,43 +47,28 @@
           <div class="modal-content">
             <!-- Título -->
             <div class="modal-title-row" style="text-align: center; justify-content: center;">
-              <span class="modal-title">Seleccionar Imagenes <br> para tu publicación</span>
+              <span class="modal-title">Cual es la <br>presentacion de tu producto</span>
               <span class="arrow" style="font-size: 1.7em; margin-left: 8px;">&#9654;</span>
             </div>
 
             <!-- Imagen principal y miniaturas -->
             <div class="img-section">
               <div class="img-label">Imagen de tu producto</div>
-              <div class="img-main" @click="triggerInput(0)">
-                <img
-                  :src="previewImages[0] || placeholderMain"
-                  alt="Producto"
-                  class="main-photo"
-                />
-                <input
-                  ref="fileInputs[0]"
-                  type="file"
-                  accept="image/*"
-                  style="display: none"
-                  @change="onImageChange($event, 0)"
-                />
-              </div>
-              <div class="img-thumbs">
-                <div class="thumb" v-for="n in 3" :key="n" @click="triggerInput(n)">
-                  <img
-                    :src="previewImages[n] || placeholderThumb"
-                    alt="Miniatura"
-                    class="thumb-img"
-                  />
-                  <span v-if="!previewImages[n]" class="plus-sign">+</span>
-                  <input
-                    ref="el => fileInputs[n] = el"
-                    type="file"
-                    accept="image/*"
-                    style="display: none"
-                    @change="onImageChange($event, n)"
-                  />
-                </div>
+              <div>
+                <ul style="list-style: none; padding: 0;">
+                  <li>
+                    <input type="radio" id="compra" name="tipo_publicacion" value="compra">
+                    <label for="compra" class="section-label">Maseta</label>
+                  </li>
+                  <li style="margin-top: 5%;">
+                    <input type="radio" id="venta" name="tipo_publicacion" value="venta">
+                    <label for="venta" class="section-label">Bolsa</label>
+                  </li>
+                  <li style="margin-top: 5%;">
+                    <input type="radio" id="mas_pequena" name="tipo_publicacion" value="mas_pequena">
+                    <label for="mas_pequena" class="section-label">Mas pequeña</label>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -118,12 +108,12 @@
         </div>
       </div>
       <footer class="app-footer">
-      <i class="fa-solid fa-house" @click="goHome" style="color: #461404;"></i>
-      <i class="icon search"  @click="goSearch">🔍</i>
-      <i class="icon add" style="font-size: 35px;">➕</i>
-      <i class="icon chat" @click="goChat">💬</i>
-      <i class="fa-regular fa-circle-user" @click="goPerfil" style="font-size: 30px; background: white ; color: #461404; border-radius: 25px;"></i>
-    </footer>
+        <i class="fa-solid fa-house" @click="goHome" style="color: #461404;"></i>
+        <i class="icon search"  @click="goSearch">🔍</i>
+        <i class="icon add" style="font-size: 35px;">➕</i>
+        <i class="icon chat" @click="goChat">💬</i>
+        <i class="fa-regular fa-circle-user" @click="goPerfil" style="font-size: 30px; background: white ; color: #461404; border-radius: 25px;"></i>
+      </footer>
     </div>
   </div>
 </template>
@@ -139,27 +129,6 @@
   import { ref, reactive } from 'vue';
   const showModal = ref(false);
   // Guarda las imágenes seleccionadas como URLs locales
-  const previewImages = reactive([null, null, null, null]);
-  // Referencias para los inputs de archivo
-  const fileInputs = reactive([ref(null), ref(null), ref(null), ref(null)]);
-
-  const placeholderMain = 'https://dummyimage.com/260x110/cef0fc/ffffff.png&text=';
-  const placeholderThumb = 'https://dummyimage.com/55x50/cef0fc/ffffff.png&text=';
-
-  function onImageChange(event, index) {
-    const file = event.target.files[0];
-    if (file) {
-      previewImages[index] = URL.createObjectURL(file);
-    }
-  }
-
-  function triggerInput(index) {
-    // Dispara el input correspondiente
-    if (fileInputs[index]) {
-      fileInputs[index].click();
-    }
-  }
-
   const form = reactive({
     titulo: '',
     nombreProducto: '',
